@@ -1,10 +1,22 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, Check, ArrowRight, Wine, BookOpen, Users, Gift } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Sparkles, Wine, BookOpen, Users, Gift } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import drinks from "@/assets/drinks.jpg";
 
 const Membership = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    graduationYear: "",
+    message: "",
+  });
+
   const benefits = [
     {
       icon: Wine,
@@ -28,58 +40,14 @@ const Membership = () => {
     },
   ];
 
-  const tiers = [
-    {
-      name: "Basic",
-      price: "$25",
-      period: "per term",
-      description: "Perfect for curious beginners",
-      features: [
-        "Access to all monthly tastings",
-        "Monthly newsletter with wine tips",
-        "10% discount on special events",
-        "Community Discord access",
-        "Wine education library",
-      ],
-      cta: "Start Basic",
-      popular: false,
-    },
-    {
-      name: "Enthusiast",
-      price: "$60",
-      period: "per term",
-      description: "For the committed wine lover",
-      features: [
-        "Everything in Basic",
-        "4 exclusive workshops per term",
-        "Priority event registration",
-        "Advanced tasting notes guide",
-        "15% partner winery discounts",
-        "WSET/ISG study group access",
-        "Member-only vineyard tour",
-      ],
-      cta: "Choose Enthusiast",
-      popular: true,
-    },
-    {
-      name: "Executive",
-      price: "$120",
-      period: "per term",
-      description: "The ultimate wine education experience",
-      features: [
-        "Everything in Enthusiast",
-        "VIP vineyard trips (Niagara, Okanagan)",
-        "One-on-one sommelier consultations",
-        "Advanced certification exam prep",
-        "Industry networking dinners",
-        "Complimentary guest pass (+1)",
-        "Leadership committee eligibility",
-        "Premium partner perks",
-      ],
-      cta: "Go Executive",
-      popular: false,
-    },
-  ];
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Application Submitted!",
+      description: "We will respond within 2 business days.",
+    });
+    setFormData({ name: "", email: "", graduationYear: "", message: "" });
+  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -89,10 +57,10 @@ const Membership = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              Membership That Ages Well
+              Join Our Community
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up">
-              Choose the tier that matches your passion for wine. All memberships include our core benefits—plus tier-specific perks that elevate your experience.
+              Become part of Western University's premier wine education and appreciation society.
             </p>
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in-up">
               <Shield className="h-4 w-4" />
@@ -105,7 +73,7 @@ const Membership = () => {
       {/* Core Benefits */}
       <section className="py-20 bg-champagne">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What Every Member Gets</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What Members Experience</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
               <Card key={index} className="text-center border-primary/20 hover:border-primary transition-all hover:shadow-elegant group animate-scale-in" style={{ animationDelay: `${index * 50}ms` }}>
@@ -124,59 +92,69 @@ const Membership = () => {
         </div>
       </section>
 
-      {/* Membership Tiers */}
+      {/* Application Form */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Choose Your Tier</h2>
-          <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
-            All memberships are valid for one academic term (Fall or Winter). Switch tiers anytime.
-          </p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {tiers.map((tier, index) => (
-              <Card
-                key={index}
-                className={`relative ${
-                  tier.popular
-                    ? "border-primary shadow-elegant lg:scale-105"
-                    : "border-primary/20"
-                } transition-all hover:shadow-elegant animate-scale-in`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-primary-foreground px-6 py-1.5 rounded-full text-sm font-semibold shadow-glow">
-                    Most Popular
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Apply to Join</h2>
+              <p className="text-lg text-muted-foreground">
+                Fill out the form below and we'll get back to you within 2 business days.
+              </p>
+            </div>
+            <Card className="shadow-elegant">
+              <CardContent className="pt-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="John Doe"
+                      required
+                    />
                   </div>
-                )}
-                <CardHeader className="text-center pb-8 pt-8">
-                  <CardTitle className="text-3xl mb-2">{tier.name}</CardTitle>
-                  <CardDescription className="text-base mb-4">{tier.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-5xl font-bold text-primary">{tier.price}</span>
-                    <span className="text-muted-foreground ml-2 text-lg">{tier.period}</span>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Western Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="jdoe@uwo.ca"
+                      required
+                    />
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
-                    {tier.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    asChild
-                    className={tier.popular ? "gradient-primary shadow-glow w-full" : "w-full"}
-                    variant={tier.popular ? "default" : "outline"}
-                    size="lg"
-                  >
-                    <Link to="/contact">
-                      {tier.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                  <div className="space-y-2">
+                    <Label htmlFor="graduationYear">Expected Graduation Year *</Label>
+                    <Input
+                      id="graduationYear"
+                      value={formData.graduationYear}
+                      onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value })}
+                      placeholder="2026"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Tell us about your interest in wine (optional)</Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Share what excites you about joining the Wine Club..."
+                      rows={5}
+                    />
+                  </div>
+                  <Button type="submit" className="w-full gradient-primary shadow-glow" size="lg">
+                    Submit Application
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
+                  <p className="text-sm text-muted-foreground text-center mt-4">
+                    We will respond within 2 business days.
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -193,16 +171,16 @@ const Membership = () => {
               />
             </div>
             <div className="order-1 md:order-2 animate-fade-in-up">
-              <h2 className="text-4xl font-bold mb-6">Ready to Raise a Glass?</h2>
+              <h2 className="text-4xl font-bold mb-6">A Welcoming Community</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Join a community of over 200 students who are expanding their palates, building professional networks, and creating unforgettable memories. No experience necessary—just curiosity and a love of learning.
               </p>
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {[
                   "Must be 19+ (legal drinking age in Ontario)",
                   "Open to Western students and alumni",
                   "Non-alcoholic alternatives at every event",
-                  "Cancel or change tiers anytime",
+                  "Inclusive and welcoming environment for all",
                 ].map((note, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Sparkles className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -210,11 +188,6 @@ const Membership = () => {
                   </div>
                 ))}
               </div>
-              <Button asChild size="lg" className="gradient-primary shadow-glow">
-                <Link to="/contact">
-                  Join Now <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
             </div>
           </div>
         </div>

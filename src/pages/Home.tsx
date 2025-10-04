@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Users, Sparkles, Briefcase, Calendar } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Briefcase, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -33,12 +33,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="gradient-primary shadow-glow text-lg">
-              <Link to="/membership">
-                Join the Club <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/events">
+                See Upcoming Events <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary-dark text-lg backdrop-blur-sm">
-              <Link to="/events">See Upcoming Events</Link>
+              <Link to="/about">Meet Our Team</Link>
             </Button>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Home = () => {
             {[
               { icon: GraduationCap, title: "Education", description: "Expert-led tastings and workshops" },
               { icon: Users, title: "Community", description: "Connect with fellow wine enthusiasts" },
-              { icon: Sparkles, title: "Access", description: "Exclusive events and partnerships" },
+              { icon: Calendar, title: "Events", description: "Exclusive tastings and vineyard trips" },
               { icon: Briefcase, title: "Career", description: "Industry networking opportunities" },
             ].map((pillar, index) => (
               <Card key={index} className="text-center border-primary/20 hover:border-primary transition-all hover:shadow-elegant group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
@@ -105,67 +105,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Membership Tiers */}
+      {/* Team Highlight */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fade-in">
-            Membership That Ages Well
+            Meet Our Team
           </h2>
           <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Choose the tier that fits your passion for wine
+            Passionate students leading Western's wine education community
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
             {[
-              {
-                name: "Basic",
-                price: "$25",
-                period: "per term",
-                features: ["Access to all tastings", "Monthly newsletters", "Event discounts", "Community access"],
-                popular: false,
-              },
-              {
-                name: "Enthusiast",
-                price: "$60",
-                period: "per term",
-                features: ["Everything in Basic", "Exclusive workshops", "Priority event registration", "Wine education resources", "Partner discounts"],
-                popular: true,
-              },
-              {
-                name: "Executive",
-                price: "$120",
-                period: "per term",
-                features: ["Everything in Enthusiast", "VIP vineyard trips", "Sommelier consultations", "Advanced certification prep", "Networking events", "Complimentary plus-one"],
-                popular: false,
-              },
-            ].map((tier, index) => (
-              <Card key={index} className={`relative ${tier.popular ? 'border-primary shadow-elegant scale-105' : 'border-primary/20'} transition-all hover:shadow-elegant animate-scale-in`} style={{ animationDelay: `${index * 100}ms` }}>
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
-                  </div>
-                )}
-                <CardHeader className="text-center pb-8 pt-8">
-                  <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-primary">{tier.price}</span>
-                    <span className="text-muted-foreground ml-2">{tier.period}</span>
-                  </div>
+              { name: "Jordan Chen", role: "President" },
+              { name: "Emma Rodriguez", role: "VP Events" },
+              { name: "Marcus Thompson", role: "VP Education" },
+            ].map((member, index) => (
+              <Card key={index} className="text-center border-primary/20 hover:border-primary transition-all hover:shadow-elegant animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <CardHeader>
+                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary mb-4" />
+                  <CardTitle className="text-xl">{member.name}</CardTitle>
+                  <CardDescription className="text-primary font-semibold">{member.role}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {tier.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Sparkles className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className={tier.popular ? "gradient-primary shadow-glow w-full" : "w-full"} variant={tier.popular ? "default" : "outline"}>
-                    <Link to="/membership">Select {tier.name}</Link>
-                  </Button>
-                </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/about">View Full Team</Link>
+            </Button>
           </div>
         </div>
       </section>

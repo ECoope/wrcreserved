@@ -206,7 +206,7 @@ const Events = () => {
                       </div>
                     </div>
                     <Button className="w-full gradient-primary shadow-glow">
-                      Register
+                      RSVP
                     </Button>
                   </CardContent>
                 </Card>
@@ -268,7 +268,7 @@ const Events = () => {
             Members get priority registration and exclusive invitations to special tastings.
           </p>
           <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold">
-            <a href="/membership">Become a Member</a>
+            <a href="/membership">Apply to Join</a>
           </Button>
         </div>
       </section>

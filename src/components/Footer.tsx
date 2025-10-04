@@ -64,6 +64,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
           <p>© {new Date().getFullYear()} Western University Wine Club. All rights reserved.</p>
           <p className="mt-2">Please drink responsibly. Must be 19+ to attend events serving alcohol.</p>
+          <p className="mt-2">Write Andrew McLeod.</p>
         </div>
       </div>
     </footer>
