@@ -18,9 +18,6 @@ const Home = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          ref={(el) => {
-            if (el) el.playbackRate = 0.9;
-          }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
