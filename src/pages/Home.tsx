@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Users, Briefcase, Calendar } from "lucide-react";
+import { ArrowRight, Network, TrendingUp, Users, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import heroVideo from "@/assets/hero-video.mov";
 import members1 from "@/assets/members-1.jpg";
 import members2 from "@/assets/members-2.jpg";
-import tastingEvent from "@/assets/tasting-event.jpg";
 
 const Home = () => {
   return (
@@ -22,23 +21,26 @@ const Home = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary-dark/70 to-primary-dark/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/80 to-primary-dark/90" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-            Savor knowledge.<br />Share the glass.
+          <h1 className="text-5xl md:text-7xl font-bold text-secondary mb-6">
+            Reserve Circle
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-            Western University's community for learning, tasting, and celebrating wine—responsibly.
+          <p className="text-xl md:text-2xl text-primary-foreground mb-3 max-w-3xl mx-auto">
+            An exclusive community for networking, professional development,
+          </p>
+          <p className="text-xl md:text-2xl text-primary-foreground mb-8 max-w-3xl mx-auto">
+            and celebrating wine—responsibly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="gradient-primary shadow-glow text-lg">
+            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold text-lg font-semibold">
               <Link to="/events">
-                See Upcoming Events <ArrowRight className="ml-2 h-5 w-5" />
+                View Events <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary-dark text-lg backdrop-blur-sm">
-              <Link to="/about">Meet Our Team</Link>
+            <Button asChild size="lg" variant="outline" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground text-lg backdrop-blur-sm font-semibold">
+              <Link to="/team">Meet Our Team</Link>
             </Button>
           </div>
         </div>
@@ -47,17 +49,18 @@ const Home = () => {
       {/* Value Pillars */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: GraduationCap, title: "Education", description: "Expert-led tastings and workshops" },
-              { icon: Users, title: "Community", description: "Connect with fellow wine enthusiasts" },
-              { icon: Calendar, title: "Events", description: "Exclusive tastings and vineyard trips" },
-              { icon: Briefcase, title: "Career", description: "Industry networking opportunities" },
+              { icon: Network, title: "Networking", description: "Connect with industry leaders and peers" },
+              { icon: TrendingUp, title: "Professional Development", description: "Build career skills and opportunities" },
+              { icon: Sparkles, title: "Exclusivity", description: "Limited membership, exceptional experiences" },
+              { icon: Users, title: "Community", description: "Cultivate meaningful relationships" },
             ].map((pillar, index) => (
-              <Card key={index} className="text-center border-primary/20 hover:border-primary transition-all hover:shadow-elegant group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <pillar.icon className="h-8 w-8 text-primary-foreground" />
+                  <div className="mx-auto w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <pillar.icon className="h-8 w-8 text-secondary" />
                   </div>
                   <CardTitle className="text-xl">{pillar.title}</CardTitle>
                 </CardHeader>
@@ -70,139 +73,107 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Event */}
-      <section className="py-20 bg-champagne">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">
-            Upcoming Featured Event
-          </h2>
-          <Card className="max-w-4xl mx-auto overflow-hidden shadow-elegant animate-fade-in-up">
-            <div className="grid md:grid-cols-2">
-              <div className="relative h-64 md:h-auto">
-                <img
-                  src={tastingEvent}
-                  alt="Wine tasting event with participants"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-2 text-primary mb-4">
-                  <Calendar className="h-5 w-5" />
-                  <span className="font-semibold">March 15, 2025</span>
-                </div>
-                <CardTitle className="text-3xl mb-4">Niagara Valley Exploration</CardTitle>
-                <CardDescription className="text-lg mb-6">
-                  Join us for an exclusive guided tasting featuring premium wines from Ontario's renowned Niagara region. Learn about terroir, viticulture, and tasting techniques from certified sommeliers.
-                </CardDescription>
-                <Button asChild className="gradient-primary shadow-glow w-fit">
-                  <Link to="/events">
-                    Register Now <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </div>
-          </Card>
-        </div>
-      </section>
-
       {/* Team Highlight */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fade-in">
-            Meet Our Team
-          </h2>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Passionate students leading Western's wine education community
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-            {[
-              { name: "Jordan Chen", role: "President" },
-              { name: "Emma Rodriguez", role: "VP Events" },
-              { name: "Marcus Thompson", role: "VP Education" },
-            ].map((member, index) => (
-              <Card key={index} className="text-center border-primary/20 hover:border-primary transition-all hover:shadow-elegant animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary mb-4" />
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-primary font-semibold">{member.role}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/about">View Full Team</Link>
-            </Button>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+                Meet Our Executive Team
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Reserve Circle is led by three dedicated Co-Chairs committed to excellence in networking and wine education.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {[
+                { name: "Andrew McLeod", role: "President" },
+                { name: "Vicky Galarce", role: "Co-Chair" },
+                { name: "Leah Ray", role: "Co-Chair" },
+              ].map((member, index) => (
+                <Card key={index} className="text-center border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                  <CardContent className="pt-8 pb-8">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center">
+                      <span className="text-3xl font-bold text-secondary">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                    <p className="text-secondary font-semibold">{member.role}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold">
+                <Link to="/team">
+                  View Full Team <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-champagne">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             What Our Members Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="shadow-elegant animate-fade-in-up">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4 mb-4">
-                  <img
-                    src={members1}
-                    alt="Club members at formal event"
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="font-semibold text-lg">Alex M.</p>
-                    <p className="text-sm text-muted-foreground">Enthusiast Member</p>
+            {[
+              {
+                name: "Charlie O.",
+                quote: "Reserve Circle has been transformative for my professional network. The connections I've made here have opened doors I never expected.",
+                image: members1,
+              },
+              {
+                name: "Megan Spiller",
+                quote: "The exclusive events and sophisticated atmosphere of WRC set it apart. It's not just about wine—it's about building a community of ambitious professionals.",
+                image: members2,
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-secondary"
+                    />
+                    <div>
+                      <p className="font-bold text-lg">{testimonial.name}</p>
+                      <p className="text-sm text-secondary">WRC Member</p>
+                    </div>
                   </div>
-                </div>
-                <p className="text-muted-foreground italic">
-                  "The Wine Club has been incredible for both my personal interest in wine and professional networking. The sommelier workshops are world-class!"
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="shadow-elegant animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4 mb-4">
-                  <img
-                    src={members2}
-                    alt="Members enjoying a tasting session"
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="font-semibold text-lg">Sarah K.</p>
-                    <p className="text-sm text-muted-foreground">Executive Member</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground italic">
-                  "From beginner to pursuing my WSET certification—this club made it all possible. The community is welcoming and the events are always memorable."
-                </p>
-              </CardContent>
-            </Card>
+                  <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+      {/* Newsletter */}
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Stay in the Loop</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Stay Connected</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Get exclusive event invitations, wine education tips, and member perks delivered to your inbox.
+            Subscribe to receive updates about exclusive events and opportunities.
           </p>
           <form className="max-w-md mx-auto flex gap-4" onSubmit={(e) => e.preventDefault()}>
             <Input
               type="email"
-              placeholder="your.email@uwo.ca"
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:ring-primary-foreground"
-              required
+              placeholder="Enter your email"
+              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:border-secondary"
             />
-            <Button type="submit" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold whitespace-nowrap">
+            <Button type="submit" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold">
               Subscribe
             </Button>
           </form>
-          <p className="text-sm mt-4 opacity-75">Western University students and alumni only</p>
         </div>
       </section>
     </div>

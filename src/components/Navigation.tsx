@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Wine, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import wrcLogo from "@/assets/wrc-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,8 +20,8 @@ const Navigation = () => {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    { to: "/membership", label: "Membership" },
     { to: "/events", label: "Events" },
+    { to: "/team", label: "Team" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -34,10 +35,10 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2 group">
-            <Wine className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-            <span className="font-serif text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Western Wine Club
+          <Link to="/" className="flex items-center gap-3 group">
+            <img src={wrcLogo} alt="WRC Logo" className="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span className="font-serif text-xl font-bold text-secondary">
+              Reserve Circle
             </span>
           </Link>
 
@@ -49,16 +50,16 @@ const Navigation = () => {
                 to={link.to}
                 className={`font-medium transition-colors relative group ${
                   location.pathname === link.to
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary"
+                    ? "text-secondary font-semibold"
+                    : "text-foreground hover:text-secondary"
                 }`}
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
               </Link>
             ))}
-            <Button asChild className="gradient-primary shadow-glow">
-              <Link to="/membership">Join Now</Link>
+            <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold">
+              <Link to="/team">Apply to Join</Link>
             </Button>
           </div>
 
@@ -82,7 +83,7 @@ const Navigation = () => {
                   to={link.to}
                   className={`font-medium py-2 ${
                     location.pathname === link.to
-                      ? "text-primary"
+                      ? "text-secondary font-semibold"
                       : "text-foreground"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -90,9 +91,9 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="gradient-primary w-full">
-                <Link to="/membership" onClick={() => setIsMobileMenuOpen(false)}>
-                  Join Now
+              <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full font-semibold">
+                <Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>
+                  Apply to Join
                 </Link>
               </Button>
             </div>

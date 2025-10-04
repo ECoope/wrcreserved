@@ -152,7 +152,7 @@ const Contact = () => {
                         href="mailto:info@westernwineclub.ca"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        info@westernwineclub.ca
+            wreservecircle@outlook.com
                       </a>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ const Contact = () => {
               <Card className="border-primary/20 bg-gradient-to-br from-wine/10 to-amber/10">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Partnership Inquiries:</strong> Interested in collaborating with the Western Wine Club? We'd love to hear from you! Select "Partnership Opportunity" above.
+                    <strong>Partnership Inquiries:</strong> Interested in collaborating with the Reserve Circle? We'd love to hear from you! Select "Partnership Opportunity" above.
                   </p>
                 </CardContent>
               </Card>
