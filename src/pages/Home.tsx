@@ -112,29 +112,29 @@ const Home = () => {
             <ValueCard
               icon={Sparkles}
               title="Exclusivity"
-              shortDescription="WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning."
-              description="WRC isn't about shutting people out. It's about bringing the right people in. We keep things small so that everyone actually knows one another and every gathering feels like a shared experience instead of a crowd. The goal is to create a space where genuine connections can happen over good wine and good conversation."
+              shortDescription="Limited membership, exceptional experiences"
+              description="WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning."
               index={0}
             />
             <ValueCard
               icon={Diamond}
               title="Refinement"
-              shortDescription="Refinement means care in everything we do. It's paying attention, showing respect, and finding beauty in the small details."
-              description="Refinement isn't about being fancy. It's about care. It's in how we speak, how we listen, and how we approach the things we love. We pay attention to the small details because they're what make moments memorable. It's about having taste that comes from curiosity, not ego."
+              shortDescription="Cultivating sophistication and elegance"
+              description="Refinement means care in everything we do. It's paying attention, showing respect, and finding beauty in the small details."
               index={1}
             />
             <ValueCard
               icon={BookOpen}
               title="Knowledge"
-              shortDescription="We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection."
-              description="We like to think of wine as a story you can taste. Every bottle has history, craft, and people behind it. We don't pretend to know everything. We're here to learn together, ask questions, and appreciate the mix of culture and creativity that makes wine so fascinating."
+              shortDescription="Continuous learning and wine education"
+              description="We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection."
               index={2}
             />
             <ValueCard
               icon={Shield}
               title="Integrity"
-              shortDescription="Integrity guides how we act and enjoy. We value honesty, respect, and doing things the right way, always."
-              description="At the heart of WRC is respect for each other, for the experience, and for the values that keep our community strong. We do things the right way, not the easy way. It's about being honest, showing up, and remembering that the way we enjoy something says as much about us as what we enjoy."
+              shortDescription="Building trust through principled action"
+              description="Integrity guides how we act and enjoy. We value honesty, respect, and doing things the right way, always."
               index={3}
             />
           </div>
