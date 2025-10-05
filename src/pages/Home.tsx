@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import heroVideo from "@/assets/hero-video.mov";
 import members1 from "@/assets/members-1.jpg";
 import members2 from "@/assets/members-2.jpg";
+import andrewMcleod from "@/assets/andrew-mcleod.jpg";
+import leahRay from "@/assets/leah-ray.jpg";
 
 interface ValueCardProps {
   icon: React.ElementType;
@@ -110,28 +112,28 @@ const Home = () => {
             <ValueCard
               icon={Sparkles}
               title="Exclusivity"
-              shortDescription="Limited membership, exceptional experiences"
+              shortDescription="WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning."
               description="WRC isn't about shutting people out. It's about bringing the right people in. We keep things small so that everyone actually knows one another and every gathering feels like a shared experience instead of a crowd. The goal is to create a space where genuine connections can happen over good wine and good conversation."
               index={0}
             />
             <ValueCard
               icon={Diamond}
               title="Refinement"
-              shortDescription="Cultivating sophistication and elegance"
+              shortDescription="Refinement means care in everything we do. It's paying attention, showing respect, and finding beauty in the small details."
               description="Refinement isn't about being fancy. It's about care. It's in how we speak, how we listen, and how we approach the things we love. We pay attention to the small details because they're what make moments memorable. It's about having taste that comes from curiosity, not ego."
               index={1}
             />
             <ValueCard
               icon={BookOpen}
               title="Knowledge"
-              shortDescription="Continuous learning and wine education"
+              shortDescription="We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection."
               description="We like to think of wine as a story you can taste. Every bottle has history, craft, and people behind it. We don't pretend to know everything. We're here to learn together, ask questions, and appreciate the mix of culture and creativity that makes wine so fascinating."
               index={2}
             />
             <ValueCard
               icon={Shield}
               title="Integrity"
-              shortDescription="Building trust through principled action"
+              shortDescription="Integrity guides how we act and enjoy. We value honesty, respect, and doing things the right way, always."
               description="At the heart of WRC is respect for each other, for the experience, and for the values that keep our community strong. We do things the right way, not the easy way. It's about being honest, showing up, and remembering that the way we enjoy something says as much about us as what we enjoy."
               index={3}
             />
@@ -154,17 +156,25 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {[
-                { name: "Andrew McLeod", role: "President" },
-                { name: "Vicky Galarce", role: "Co-Chair" },
-                { name: "Leah Ray", role: "Co-Chair" },
+                { name: "Andrew McLeod", role: "President", image: andrewMcleod },
+                { name: "Vicky Galarce", role: "Co-Chair", image: null },
+                { name: "Leah Ray", role: "Co-Chair", image: leahRay },
               ].map((member, index) => (
                 <Card key={index} className="text-center border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                   <CardContent className="pt-8 pb-8">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center">
-                      <span className="text-3xl font-bold text-secondary">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-24 h-24 mx-auto mb-4 rounded-full object-cover border-4 border-secondary"
+                      />
+                    ) : (
+                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center">
+                        <span className="text-3xl font-bold text-secondary">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
                     <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                     <p className="text-secondary font-semibold">{member.role}</p>
                   </CardContent>
