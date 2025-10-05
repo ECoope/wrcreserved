@@ -43,7 +43,9 @@ const Footer = () => {
                 705-427-7891
               </a>
               <a href="mailto:wreservecircle@outlook.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                <Mail className="h-4 w-4" />
+                <span className="flex items-center justify-center h-6 w-6 rounded bg-secondary/20">
+                  <Mail className="h-4 w-4" />
+                </span>
                 wreservecircle@outlook.com
               </a>
             </div>
