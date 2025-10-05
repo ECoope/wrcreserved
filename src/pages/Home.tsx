@@ -83,7 +83,7 @@ const Home = () => {
         
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-secondary mb-6">
-            Reserve Circle
+            The Reserve Circle
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground mb-3 max-w-3xl mx-auto">
             An exclusive community for networking, professional development,
@@ -150,7 +150,7 @@ const Home = () => {
                 Meet Our Executive Team
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Reserve Circle is led by three dedicated Co-Chairs committed to excellence in networking and wine education.
+                The Reserve Circle is led by three dedicated Co-Chairs committed to excellence in networking and wine education.
               </p>
             </div>
             
@@ -203,7 +203,7 @@ const Home = () => {
             {[
               {
                 name: "Charlie O.",
-                quote: "Reserve Circle has been transformative for my professional network. The connections I've made here have opened doors I never expected.",
+                quote: "The Reserve Circle has been transformative for my professional network. The connections I've made here have opened doors I never expected.",
                 image: members1,
               },
               {

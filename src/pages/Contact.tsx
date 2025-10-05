@@ -197,7 +197,7 @@ const Contact = () => {
               <Card className="border-primary/20 bg-gradient-to-br from-wine/10 to-amber/10">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Partnership Inquiries:</strong> Interested in collaborating with the Reserve Circle? We'd love to hear from you! Select "Partnership Opportunity" above.
+                    <strong>Partnership Inquiries:</strong> Interested in collaborating with The Reserve Circle? We'd love to hear from you! Select "Partnership Opportunity" above.
                   </p>
                 </CardContent>
               </Card>

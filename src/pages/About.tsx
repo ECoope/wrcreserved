@@ -29,8 +29,8 @@ const About = () => {
 
   const faqs = [
     {
-      question: "Is Reserve Circle affiliated with Western University?",
-      answer: "No, Reserve Circle (WRC) is an independent organization. While many of our members are connected to the university community, we are not officially ratified with Western University.",
+      question: "Is The Reserve Circle affiliated with Western University?",
+      answer: "No, The Reserve Circle (WRC) is an independent organization. While many of our members are connected to the university community, we are not officially ratified with Western University.",
     },
     {
       question: "How do I become a member?",
@@ -45,8 +45,8 @@ const About = () => {
       answer: "Absolutely no problem! We always offer sophisticated non-alcoholic beverages at tastings, and many of our events focus on networking, professional development, and wine appreciation culture.",
     },
     {
-      question: "When was Reserve Circle founded?",
-      answer: "Reserve Circle was founded in 2025 with a vision to create an exclusive community focused on networking, professional development, and responsible wine appreciation.",
+      question: "When was The Reserve Circle founded?",
+      answer: "The Reserve Circle was founded in 2025 with a vision to create an exclusive community focused on networking, professional development, and responsible wine appreciation.",
     },
   ];
 
@@ -81,7 +81,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Reserve Circle is built on principles of excellence, exclusivity, and community.
+              The Reserve Circle is built on principles of excellence, exclusivity, and community.
             </p>
           </div>
           
@@ -140,7 +140,7 @@ const About = () => {
           <Shield className="h-12 w-12 mx-auto mb-4 text-secondary" />
           <h3 className="text-3xl font-bold mb-4">Responsible Enjoyment</h3>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
-            Reserve Circle is committed to promoting responsible wine appreciation. All events comply with Ontario regulations. Must be 19+ to attend events serving alcohol. Non-alcoholic options are always available.
+            The Reserve Circle is committed to promoting responsible wine appreciation. All events comply with Ontario regulations. Must be 19+ to attend events serving alcohol. Non-alcoholic options are always available.
           </p>
         </div>
       </section>

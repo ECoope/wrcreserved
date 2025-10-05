@@ -38,7 +38,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={wrcLogo} alt="WRC Logo" className="h-12 w-12 transition-transform group-hover:scale-110" />
             <span className="font-serif text-xl font-bold text-secondary">
-              Reserve Circle
+              The Reserve Circle
             </span>
           </Link>
 

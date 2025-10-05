@@ -65,7 +65,7 @@ const Team = () => {
             Our Team
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
-            Meet the exclusive leadership of Reserve Circle.
+            Meet the exclusive leadership of The Reserve Circle.
           </p>
         </div>
       </section>
@@ -127,7 +127,7 @@ const Team = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Apply to Join</h2>
               <p className="text-lg text-muted-foreground">
-                Reserve Circle is exclusive to executive members. Applications are reviewed once per year.
+                The Reserve Circle is exclusive to executive members. Applications are reviewed once per year.
               </p>
             </div>
 
@@ -171,7 +171,7 @@ const Team = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="message">Why do you want to join Reserve Circle?</Label>
+                    <Label htmlFor="message">Why do you want to join The Reserve Circle?</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
