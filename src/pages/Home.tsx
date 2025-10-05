@@ -11,11 +11,12 @@ import members2 from "@/assets/members-2.jpg";
 interface ValueCardProps {
   icon: React.ElementType;
   title: string;
+  shortDescription: string;
   description: string;
   index: number;
 }
 
-const ValueCard = ({ icon: Icon, title, description, index }: ValueCardProps) => {
+const ValueCard = ({ icon: Icon, title, shortDescription, description, index }: ValueCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -39,7 +40,7 @@ const ValueCard = ({ icon: Icon, title, description, index }: ValueCardProps) =>
             <CardTitle className="text-xl">{title}</CardTitle>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-base">Click to learn more</CardDescription>
+            <CardDescription className="text-base">{shortDescription}</CardDescription>
           </CardContent>
         </Card>
 
@@ -109,24 +110,28 @@ const Home = () => {
             <ValueCard
               icon={Sparkles}
               title="Exclusivity"
+              shortDescription="Limited membership, exceptional experiences"
               description="WRC isn't about shutting people out. It's about bringing the right people in. We keep things small so that everyone actually knows one another and every gathering feels like a shared experience instead of a crowd. The goal is to create a space where genuine connections can happen over good wine and good conversation."
               index={0}
             />
             <ValueCard
               icon={Diamond}
               title="Refinement"
+              shortDescription="Cultivating sophistication and elegance"
               description="Refinement isn't about being fancy. It's about care. It's in how we speak, how we listen, and how we approach the things we love. We pay attention to the small details because they're what make moments memorable. It's about having taste that comes from curiosity, not ego."
               index={1}
             />
             <ValueCard
               icon={BookOpen}
               title="Knowledge"
+              shortDescription="Continuous learning and wine education"
               description="We like to think of wine as a story you can taste. Every bottle has history, craft, and people behind it. We don't pretend to know everything. We're here to learn together, ask questions, and appreciate the mix of culture and creativity that makes wine so fascinating."
               index={2}
             />
             <ValueCard
               icon={Shield}
               title="Integrity"
+              shortDescription="Building trust through principled action"
               description="At the heart of WRC is respect for each other, for the experience, and for the values that keep our community strong. We do things the right way, not the easy way. It's about being honest, showing up, and remembering that the way we enjoy something says as much about us as what we enjoy."
               index={3}
             />
