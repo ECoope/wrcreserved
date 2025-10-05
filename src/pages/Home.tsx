@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Diamond, BookOpen, Shield, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,60 @@ import { Input } from "@/components/ui/input";
 import heroVideo from "@/assets/hero-video.mov";
 import members1 from "@/assets/members-1.jpg";
 import members2 from "@/assets/members-2.jpg";
+
+interface ValueCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  index: number;
+}
+
+const ValueCard = ({ icon: Icon, title, description, index }: ValueCardProps) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div
+      className="relative h-80 cursor-pointer animate-scale-in"
+      style={{ animationDelay: `${index * 100}ms`, perspective: "1000px" }}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <div
+        className={`relative w-full h-full transition-transform duration-700 transform-gpu ${
+          isFlipped ? "[transform:rotateY(180deg)]" : ""
+        }`}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front of card */}
+        <Card className="absolute inset-0 text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group [backface-visibility:hidden]">
+          <CardHeader>
+            <div className="mx-auto w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Icon className="h-8 w-8 text-secondary" />
+            </div>
+            <CardTitle className="text-xl">{title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base">Click to learn more</CardDescription>
+          </CardContent>
+        </Card>
+
+        {/* Back of card */}
+        <Card className="absolute inset-0 border-primary/20 hover:border-secondary transition-all hover:shadow-bold [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-y-auto">
+          <CardHeader className="pb-3">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <Icon className="h-6 w-6 text-secondary" />
+              </div>
+              <CardTitle className="text-lg">{title}</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   return (
@@ -51,24 +106,30 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { icon: Sparkles, title: "Exclusivity", description: "Limited membership, exceptional experiences" },
-              { icon: Diamond, title: "Refinement", description: "Cultivating sophistication and elegance" },
-              { icon: BookOpen, title: "Knowledge", description: "Continuous learning and wine education" },
-              { icon: Shield, title: "Integrity", description: "Building trust through principled action" },
-            ].map((pillar, index) => (
-              <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <pillar.icon className="h-8 w-8 text-secondary" />
-                  </div>
-                  <CardTitle className="text-xl">{pillar.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{pillar.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            <ValueCard
+              icon={Sparkles}
+              title="Exclusivity"
+              description="WRC isn't about shutting people out. It's about bringing the right people in. We keep things small so that everyone actually knows one another and every gathering feels like a shared experience instead of a crowd. The goal is to create a space where genuine connections can happen over good wine and good conversation."
+              index={0}
+            />
+            <ValueCard
+              icon={Diamond}
+              title="Refinement"
+              description="Refinement isn't about being fancy. It's about care. It's in how we speak, how we listen, and how we approach the things we love. We pay attention to the small details because they're what make moments memorable. It's about having taste that comes from curiosity, not ego."
+              index={1}
+            />
+            <ValueCard
+              icon={BookOpen}
+              title="Knowledge"
+              description="We like to think of wine as a story you can taste. Every bottle has history, craft, and people behind it. We don't pretend to know everything. We're here to learn together, ask questions, and appreciate the mix of culture and creativity that makes wine so fascinating."
+              index={2}
+            />
+            <ValueCard
+              icon={Shield}
+              title="Integrity"
+              description="At the heart of WRC is respect for each other, for the experience, and for the values that keep our community strong. We do things the right way, not the easy way. It's about being honest, showing up, and remembering that the way we enjoy something says as much about us as what we enjoy."
+              index={3}
+            />
           </div>
         </div>
       </section>
