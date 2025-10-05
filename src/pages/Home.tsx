@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Network, TrendingUp, Users, Sparkles, Mail } from "lucide-react";
+import { ArrowRight, Sparkles, Diamond, BookOpen, Shield, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -52,10 +52,10 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: Network, title: "Networking", description: "Connect with industry leaders and peers" },
-              { icon: TrendingUp, title: "Professional Development", description: "Build career skills and opportunities" },
               { icon: Sparkles, title: "Exclusivity", description: "Limited membership, exceptional experiences" },
-              { icon: Users, title: "Community", description: "Cultivate meaningful relationships" },
+              { icon: Diamond, title: "Refinement", description: "Cultivating sophistication and elegance" },
+              { icon: BookOpen, title: "Knowledge", description: "Continuous learning and wine education" },
+              { icon: Shield, title: "Integrity", description: "Building trust through principled action" },
             ].map((pillar, index) => (
               <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
