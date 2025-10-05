@@ -42,10 +42,6 @@ const Footer = () => {
                 <Mail className="h-4 w-4" />
                 wreservecircle@outlook.com
               </a>
-              <a href="mailto:AndrewMcLeod127@gmail.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                <Mail className="h-4 w-4" />
-                AndrewMcLeod127@gmail.com
-              </a>
               <a href="tel:+17054277891" className="flex items-center gap-2 hover:text-secondary transition-colors">
                 <Phone className="h-4 w-4" />
                 705-427-7891
