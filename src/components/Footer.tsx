@@ -38,13 +38,13 @@ const Footer = () => {
           <div>
             <h3 className="font-serif font-semibold mb-4 text-secondary">Contact</h3>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="mailto:wreservecircle@outlook.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                <Mail className="h-4 w-4" />
-                wreservecircle@outlook.com
-              </a>
               <a href="tel:+17054277891" className="flex items-center gap-2 hover:text-secondary transition-colors">
                 <Phone className="h-4 w-4" />
                 705-427-7891
+              </a>
+              <a href="mailto:wreservecircle@outlook.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                <Mail className="h-4 w-4" />
+                wreservecircle@outlook.com
               </a>
             </div>
           </div>
