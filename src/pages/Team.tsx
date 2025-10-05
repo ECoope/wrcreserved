@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
+import andrewMcleod from "@/assets/andrew-mcleod.jpg";
+import leahRay from "@/assets/leah-ray.jpg";
 
 const Team = () => {
   const [formData, setFormData] = useState({
@@ -40,14 +42,17 @@ const Team = () => {
       role: "President",
       email: "AndrewMcLeod127@gmail.com",
       phone: "705-427-7891",
+      image: andrewMcleod,
     },
     {
       name: "Vicky Galarce",
       role: "Co-Chair",
+      image: null,
     },
     {
       name: "Leah Ray",
       role: "Co-Chair",
+      image: leahRay,
     },
   ];
 
@@ -77,11 +82,19 @@ const Team = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="pt-8 pb-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <span className="text-3xl font-bold text-secondary">
-                      {chair.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                  {chair.image ? (
+                    <img
+                      src={chair.image}
+                      alt={chair.name}
+                      className="w-24 h-24 mx-auto mb-6 rounded-full object-cover border-4 border-secondary group-hover:scale-110 transition-transform"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <span className="text-3xl font-bold text-secondary">
+                        {chair.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                  )}
                   <h3 className="text-2xl font-bold mb-2">{chair.name}</h3>
                   <p className="text-secondary font-semibold mb-4">{chair.role}</p>
                   {chair.email && (

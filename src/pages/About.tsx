@@ -1,39 +1,29 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Network, TrendingUp, Shield, Users, Sparkles, Heart } from "lucide-react";
+import { Sparkles, Diamond, BookOpen, Shield } from "lucide-react";
 import aboutVideo from "@/assets/about-video.mov";
 
 const About = () => {
   const values = [
     {
-      icon: Network,
-      title: "Strong Networking",
-      description: "Build meaningful connections with industry professionals, executives, and ambitious peers who share your passion for excellence.",
-    },
-    {
       icon: Sparkles,
       title: "Exclusivity",
-      description: "Limited membership ensures intimate events and exceptional experiences. We hire executive members once per year.",
+      description: "Limited membership, exceptional experiences. WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning.",
     },
     {
-      icon: Users,
-      title: "Community",
-      description: "More than an organization—we're a family of driven individuals supporting each other's personal and professional growth.",
+      icon: Diamond,
+      title: "Refinement",
+      description: "Cultivating sophistication and elegance. Refinement means care in everything we do. It's paying attention, showing respect, and finding beauty in the small details.",
+    },
+    {
+      icon: BookOpen,
+      title: "Knowledge",
+      description: "Continuous learning and wine education. We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection.",
     },
     {
       icon: Shield,
-      title: "Responsible Enjoyment",
-      description: "We celebrate wine culture while prioritizing safe, mindful consumption. Non-alcoholic options are always available.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Professional Development",
-      description: "Gain skills, insights, and opportunities that will serve you throughout your career and beyond.",
-    },
-    {
-      icon: Heart,
-      title: "Curiosity",
-      description: "We encourage exploration of wine regions, varietals, and the rich culture surrounding the world of wine.",
+      title: "Integrity",
+      description: "Building trust through principled action. Integrity guides how we act and enjoy. We value honesty, respect, and doing things the right way, always.",
     },
   ];
 
@@ -95,7 +85,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {values.map((value, index) => (
               <Card
                 key={index}
