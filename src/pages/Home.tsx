@@ -86,11 +86,30 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover [&::-webkit-media-controls]:hidden [&::-webkit-media-controls-play-button]:hidden"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{ pointerEvents: 'none' }}
+          onLoadedMetadata={(e) => {
+            const video = e.currentTarget;
+            video.play().catch(() => {});
+          }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
+        <style>{`
+          video::-webkit-media-controls {
+            display: none !important;
+          }
+          video::-webkit-media-controls-enclosure {
+            display: none !important;
+          }
+          video::-webkit-media-controls-panel {
+            display: none !important;
+          }
+          video::-webkit-media-controls-play-button {
+            display: none !important;
+          }
+        `}</style>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/85 to-primary/95" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">

@@ -164,15 +164,14 @@ const Sponsors = () => {
           }
         }
         
-        /* Animation on desktop only */
-        @media (min-width: 768px) {
-          .sponsor-track {
-            animation: scroll 40s linear infinite;
-          }
-          
-          .sponsor-carousel:hover .sponsor-track {
-            animation-play-state: paused;
-          }
+        /* Animation on all devices */
+        .sponsor-track {
+          animation: scroll 40s linear infinite;
+        }
+        
+        .sponsor-carousel:hover .sponsor-track,
+        .sponsor-carousel:active .sponsor-track {
+          animation-play-state: paused;
         }
 
         @media (prefers-reduced-motion: reduce) {
