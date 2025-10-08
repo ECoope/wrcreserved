@@ -74,7 +74,7 @@ const About = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto animate-fade-in-up leading-relaxed">
-            The <span className="text-secondary font-semibold">Western Reserve Circle</span> is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Every gathering is planned with <span className="text-secondary font-semibold">purpose</span> so that what our members take with them is as meaningful as what is poured.
+            The <span className="text-secondary font-semibold">Western Reserve Circle</span> is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Every gathering is planned with <span className="text-primary font-semibold">purpose</span> so that what our members take with them is as meaningful as what is poured.
           </p>
         </div>
       </section>
