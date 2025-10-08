@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import TwoToneTitle from "@/components/TwoToneTitle";
-import heroVideo from "@/assets/hero-video.mov";
+import heroVideo from "@/assets/hero-background.mov";
 import members1 from "@/assets/members-1.jpg";
 import members2 from "@/assets/members-2.jpg";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
