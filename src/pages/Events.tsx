@@ -49,7 +49,14 @@ const Events = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Instagram className="h-4 w-4 text-primary" />
-                    <span>Message us on Instagram</span>
+                    <a 
+                      href="https://www.instagram.com/official.wrc/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Message us on Instagram
+                    </a>
                   </div>
                 </div>
               </AlertDescription>
