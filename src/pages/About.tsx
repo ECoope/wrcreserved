@@ -55,7 +55,7 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-32 overflow-hidden bg-gradient-to-b from-primary/10 to-background">
         <video
           autoPlay
           loop
@@ -65,7 +65,7 @@ const About = () => {
         >
           <source src={aboutVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-background/90 to-background" />
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <TwoToneTitle 
@@ -74,13 +74,13 @@ const About = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto animate-fade-in-up leading-relaxed">
-            The Western Reserve Circle is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Every gathering is planned with purpose so that what our members take with them is as meaningful as what is poured.
+            The <span className="text-secondary font-semibold">Western Reserve Circle</span> is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Every gathering is planned with <span className="text-secondary font-semibold">purpose</span> so that what our members take with them is as meaningful as what is poured.
           </p>
         </div>
       </section>
 
       {/* Partnership Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-b from-background via-primary/5 to-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">
@@ -122,12 +122,12 @@ const About = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
               <span className="font-bold">OUR</span>
-              <span className="font-normal"> VALUES</span>
+              <span className="font-normal text-secondary"> VALUES</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The Reserve Circle is built on principles of excellence, exclusivity, and community.
@@ -157,7 +157,7 @@ const About = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-b from-background via-primary/5 to-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">

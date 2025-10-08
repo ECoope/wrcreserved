@@ -18,7 +18,7 @@ const Events = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="py-32 bg-primary text-primary-foreground">
+      <section className="py-32 bg-gradient-to-b from-primary via-primary/95 to-background text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <TwoToneTitle 
             first="OUR" 
@@ -26,13 +26,13 @@ const Events = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in text-secondary"
           />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
-            Exclusive, invite-only experiences for our members.
+            Exclusive, <span className="text-secondary font-semibold">invite-only</span> experiences for our members.
           </p>
         </div>
       </section>
 
       {/* Private Events Notice */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto px-4">
           <div ref={eventIntroRef} className="max-w-3xl mx-auto reveal">
             <Alert className="border-primary/20 bg-card">
@@ -59,11 +59,11 @@ const Events = () => {
       </section>
 
       {/* Past Events */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-b from-muted via-primary/5 to-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">PAST</span>
-            <span className="font-normal"> EVENTS</span>
+            <span className="font-normal text-secondary"> EVENTS</span>
           </h2>
           <div className="max-w-5xl mx-auto space-y-8">
             {/* Featured Event - Don Adriano */}
@@ -138,11 +138,11 @@ const Events = () => {
       </section>
 
       {/* Event Series */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">EVENT</span>
-            <span className="font-normal"> SERIES</span>
+            <span className="font-normal text-secondary"> SERIES</span>
           </h2>
           <div ref={eventSeriesRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
             {[

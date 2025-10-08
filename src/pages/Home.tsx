@@ -90,7 +90,7 @@ const Home = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/80 to-primary-dark/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/85 to-primary/95" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
           <TwoToneTitle 
@@ -114,9 +114,11 @@ const Home = () => {
       </section>
 
       {/* Value Pillars */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background via-muted to-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            Our <span className="text-secondary">Values</span>
+          </h2>
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
             <ValueCard
               icon={Sparkles}
@@ -151,12 +153,12 @@ const Home = () => {
       </section>
 
       {/* Team Highlight */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-                Meet Our Executive Team
+                Meet Our <span className="text-secondary">Executive Team</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 The Reserve Circle is led by three dedicated Co-Chairs committed to excellence in networking and wine education.
@@ -203,10 +205,10 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background via-muted to-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            What Our Members Say
+            What Our <span className="text-secondary">Members</span> Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
@@ -250,11 +252,11 @@ const Home = () => {
               <Card key={index} className="border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow" style={{ animationDelay: `${index * 150}ms` }}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover object-center border-2 border-secondary"
-                    />
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-secondary"
+                  />
                     <div>
                       <p className="font-bold text-lg">{testimonial.name}</p>
                       <p className="text-sm text-secondary">{testimonial.role}</p>

@@ -49,7 +49,7 @@ const Team = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="py-32 bg-primary text-primary-foreground">
+      <section className="py-32 bg-gradient-to-b from-primary via-primary/95 to-background text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <TwoToneTitle 
             first="OUR" 
@@ -57,17 +57,17 @@ const Team = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
-            Meet the leadership of The Reserve Circle.
+            Meet the <span className="text-secondary font-semibold">leadership</span> of The Reserve Circle.
           </p>
         </div>
       </section>
 
       {/* Featured Leadership */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">EXECUTIVE</span>
-            <span className="font-normal"> TEAM</span>
+            <span className="font-normal text-secondary"> TEAM</span>
           </h2>
           
           {/* Featured Team - 3 columns */}

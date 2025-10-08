@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <section className="py-32 bg-gradient-to-b from-primary via-primary/95 to-background">
         <div className="container mx-auto px-4 text-center">
           <TwoToneTitle 
             first="GET IN" 
@@ -60,7 +60,7 @@ const Contact = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <div ref={introRef} className="reveal">
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-primary-foreground max-w-3xl mx-auto">
               Questions, partnerships, or press inquiries? Drop us a line and we will be in touch.
             </p>
           </div>
@@ -68,7 +68,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
