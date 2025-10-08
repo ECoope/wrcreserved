@@ -110,10 +110,10 @@ const About = () => {
               
               <div className="space-y-6 max-w-3xl text-center">
                 <p className="text-lg text-muted-foreground">
-                  The Queen's Reserve Circle (QRC) was founded in 2023, establishing the foundation for refined wine appreciation and sophisticated networking among students.
+                  The Queen's Reserve Circle (QRC) was founded in 2023, establishing the foundation for refined wine appreciation and sophisticated networking among students. Building on this success, the Western Reserve Circle (WRC) was formed in 2025 in partnership with QRC.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  QRC creates an exclusive community where young professionals develop their palates, expand their networks, and grow both personally and professionally.
+                  Together, we share a unified vision: creating exclusive communities where young professionals develop their palates, expand their networks, and grow both personally and professionally.
                 </p>
               </div>
             </div>
