@@ -38,20 +38,20 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={wrcLogo} alt="WRC Logo" className="h-12 w-12 transition-transform group-hover:scale-110" />
-            <span className="font-serif text-base font-bold text-primary-foreground">
+            <img src={wrcLogo} alt="WRC Logo" className="h-16 w-16 transition-transform group-hover:scale-110" />
+            <span className="font-serif text-lg font-bold text-primary-foreground">
               The Reserve Circle
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => {
               return (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-medium transition-colors relative group ${
+                  className={`font-medium text-base transition-colors relative group ${
                     location.pathname === link.to
                       ? "text-primary-foreground font-semibold"
                       : "text-primary-foreground hover:text-primary-foreground/80"
