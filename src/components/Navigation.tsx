@@ -47,7 +47,6 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
-              const isHome = link.to === "/";
               return (
                 <Link
                   key={link.to}
@@ -63,9 +62,6 @@ const Navigation = () => {
                 </Link>
               );
             })}
-            <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold">
-              <Link to="/team">Apply to Join</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
