@@ -144,7 +144,7 @@ const Contact = () => {
             <div className="space-y-6 animate-fade-in-up">
               <Card className="border-primary/20 shadow-elegant">
                 <CardHeader>
-                  <CardTitle className="text-xl">Contact Information</CardTitle>
+                  <CardTitle className="text-xl">General Inquiries</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -152,10 +152,30 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold">Email</p>
                       <a
-                        href="mailto:info@westernwineclub.ca"
+                        href="mailto:wreservecircle@outlook.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-            wreservecircle@outlook.com
+                        wreservecircle@outlook.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 shadow-elegant">
+                <CardHeader>
+                  <CardTitle className="text-xl">Personal & Immediate Inquiries</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Mail className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <a
+                        href="mailto:andrewmcleod127@gmail.com"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        andrewmcleod127@gmail.com
                       </a>
                     </div>
                   </div>
@@ -164,14 +184,25 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <p className="text-muted-foreground">(519) 555-WINE</p>
+                      <a
+                        href="tel:+17054277891"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        (705) 427-7891
+                      </a>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
 
+              <Card className="border-primary/20 shadow-elegant">
+                <CardHeader>
+                  <CardTitle className="text-xl">Location</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-semibold">Location</p>
                       <p className="text-muted-foreground">
                         Western University<br />
                         University Community Centre<br />
