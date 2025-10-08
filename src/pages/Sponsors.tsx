@@ -71,53 +71,60 @@ const Sponsors = () => {
       </section>
 
       {/* Sponsors Carousel */}
-      <section className="py-32 pb-64 bg-background relative overflow-x-hidden">
-        <div className="relative flex justify-center items-center">
-          <div className="sponsor-carousel overflow-x-auto md:overflow-x-visible scroll-smooth snap-x snap-mandatory hide-scrollbar">
-            <div className="sponsor-track">
-              {duplicatedSponsors.map((sponsor, index) => (
-                <HoverCard key={index} openDelay={200}>
-                  <HoverCardTrigger asChild>
-                    <button className="sponsor-item snap-center bg-transparent border-0 p-0">
-                      <img
-                        src={sponsor.logoSrc}
-                        alt={`${sponsor.name} logo`}
-                        className="h-32 w-auto object-contain transition-all duration-300 hover:scale-110"
-                      />
-                    </button>
-                  </HoverCardTrigger>
-                  <HoverCardContent 
-                    className="w-96 border-2 bg-background shadow-xl" 
-                    style={{ borderColor: 'hsl(var(--wrc-gold))' }}
-                    sideOffset={10}
-                  >
-                    <div className="space-y-3">
-                      <h4 className="font-bold text-lg" style={{ color: 'hsl(var(--wrc-purple))' }}>
-                        {sponsor.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {sponsor.description}
-                      </p>
-                      <a
-                        href={sponsor.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
-                        style={{ color: 'hsl(var(--wrc-gold))' }}
-                      >
-                        Visit Website
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              ))}
+      <section className="py-32 pb-64 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="sponsor-carousel-wrapper">
+            <div className="sponsor-carousel overflow-x-auto md:overflow-x-visible scroll-smooth snap-x snap-mandatory hide-scrollbar">
+              <div className="sponsor-track">
+                {duplicatedSponsors.map((sponsor, index) => (
+                  <HoverCard key={index} openDelay={200}>
+                    <HoverCardTrigger asChild>
+                      <button className="sponsor-item snap-center bg-transparent border-0 p-0">
+                        <img
+                          src={sponsor.logoSrc}
+                          alt={`${sponsor.name} logo`}
+                          className="h-32 w-auto object-contain transition-all duration-300 hover:scale-110"
+                        />
+                      </button>
+                    </HoverCardTrigger>
+                    <HoverCardContent 
+                      className="w-96 border-2 bg-background shadow-xl max-h-[400px] overflow-y-auto" 
+                      style={{ borderColor: 'hsl(var(--wrc-gold))' }}
+                      sideOffset={15}
+                      align="center"
+                    >
+                      <div className="space-y-3 p-2">
+                        <h4 className="font-bold text-lg" style={{ color: 'hsl(var(--wrc-purple))' }}>
+                          {sponsor.name}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {sponsor.description}
+                        </p>
+                        <a
+                          href={sponsor.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+                          style={{ color: 'hsl(var(--wrc-gold))' }}
+                        >
+                          Visit Website
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <style>{`
+        .sponsor-carousel-wrapper {
+          position: relative;
+        }
+        
         .sponsor-carousel {
           width: 100%;
           position: relative;
@@ -136,6 +143,7 @@ const Sponsors = () => {
           justify-content: center;
           min-width: 250px;
           padding: 1.5rem 2rem;
+          cursor: pointer;
         }
         
         .hide-scrollbar::-webkit-scrollbar {
