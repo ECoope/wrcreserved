@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import TwoToneTitle from "@/components/TwoToneTitle";
 import tastingEvent from "@/assets/tasting-event.jpg";
+import silentDinner from "@/assets/silent-dinner.jpg";
+import rooftopSocial from "@/assets/rooftop-social.jpg";
 
 const Events = () => {
 
@@ -79,12 +81,44 @@ const Events = () => {
               </div>
             </Card>
             
-            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Silent Dinner</h3>
-                <p className="text-secondary font-semibold mb-3">September 17, 2025</p>
-                <p className="text-muted-foreground">An intimate dining experience focused on mindful appreciation and connection.</p>
-              </CardContent>
+            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative h-64 md:h-auto">
+                  <img
+                    src={silentDinner}
+                    alt="Silent Dinner Event"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-3">Silent Dinner</h3>
+                  <p className="text-secondary font-semibold mb-2">September 17, 2025</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    A social dining experience featuring live music, meaningful conversations, and a strong bonding experience that brought our members together in an intimate setting.
+                  </p>
+                </CardContent>
+              </div>
+            </Card>
+
+            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative h-64 md:h-auto">
+                  <img
+                    src={rooftopSocial}
+                    alt="Rooftop Social Event"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-3">Rooftop Social</h3>
+                  <p className="text-secondary font-semibold mb-2">June 13, 2025</p>
+                  <p className="text-muted-foreground font-medium mb-4">55C Condos, Toronto, Ontario</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    A joint social with QRC held in the heart of Toronto. This privately held event for Reserve Circle members marked a strong first crossover, bringing together members in an exclusive rooftop setting.
+                  </p>
+                  <p className="text-sm text-secondary italic">Supported by Majestic Wines</p>
+                </CardContent>
+              </div>
             </Card>
           </div>
         </div>
