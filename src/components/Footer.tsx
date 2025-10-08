@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-serif text-lg font-bold">The Reserve Circle</span>
             </div>
             <p className="text-sm text-primary-foreground/80">
-              An exclusive community for networking, professional development, and celebrating wine responsibly.
+              An exclusive student community dedicated to cultivating sophistication through private wine and beverage tastings.
             </p>
           </div>
 
@@ -28,6 +28,9 @@ const Footer = () => {
               </Link>
               <Link to="/events" className="text-sm hover:text-secondary transition-colors">
                 Events
+              </Link>
+              <Link to="/sponsors" className="text-sm hover:text-secondary transition-colors">
+                Sponsors
               </Link>
               <Link to="/contact" className="text-sm hover:text-secondary transition-colors">
                 Contact

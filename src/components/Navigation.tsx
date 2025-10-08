@@ -22,6 +22,7 @@ const Navigation = () => {
     { to: "/about", label: "About" },
     { to: "/events", label: "Events" },
     { to: "/team", label: "Team" },
+    { to: "/sponsors", label: "Sponsors" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -44,20 +45,27 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`font-medium transition-colors relative group ${
-                  location.pathname === link.to
-                    ? "text-secondary font-semibold"
-                    : "text-foreground hover:text-secondary"
-                }`}
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isHome = link.to === "/";
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`font-medium transition-colors relative group ${
+                    isHome
+                      ? location.pathname === link.to
+                        ? "text-secondary font-semibold"
+                        : "text-foreground hover:text-secondary"
+                      : location.pathname === link.to
+                        ? "text-secondary font-semibold"
+                        : "text-secondary hover:text-secondary/80"
+                  }`}
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
+                </Link>
+              );
+            })}
             <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold">
               <Link to="/team">Apply to Join</Link>
             </Button>
@@ -77,20 +85,27 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`font-medium py-2 ${
-                    location.pathname === link.to
-                      ? "text-secondary font-semibold"
-                      : "text-foreground"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isHome = link.to === "/";
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`font-medium py-2 ${
+                      isHome
+                        ? location.pathname === link.to
+                          ? "text-secondary font-semibold"
+                          : "text-foreground"
+                        : location.pathname === link.to
+                          ? "text-secondary font-semibold"
+                          : "text-secondary"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full font-semibold">
                 <Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>
                   Apply to Join

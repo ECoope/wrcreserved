@@ -8,22 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* WRC Brand Colors from Logo */
+    --wrc-purple: 262 65% 20%;
+    --wrc-gold: 45 85% 60%;
+    --wrc-text: 270 30% 12%;
+    
     --background: 0 0% 100%;
-    --foreground: 262 40% 15%;
+    --foreground: 270 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 262 40% 15%;
+    --card-foreground: 270 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 262 40% 15%;
+    --popover-foreground: 270 30% 12%;
 
-    --primary: 262 60% 25%;
-    --primary-foreground: 45 85% 65%;
+    --primary: 262 65% 20%;
+    --primary-foreground: 45 85% 60%;
     
-    --primary-dark: 262 60% 18%;
+    --primary-dark: 262 65% 15%;
 
-    --secondary: 45 85% 65%;
-    --secondary-foreground: 262 60% 25%;
+    --secondary: 45 85% 60%;
+    --secondary-foreground: 262 65% 20%;
 
     --muted: 262 20% 96%;
     --muted-foreground: 262 15% 45%;
@@ -116,11 +121,11 @@ All colors MUST be HSL.
 
 @layer utilities {
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', 'EB Garamond', Georgia, serif;
   }
   
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'EB Garamond', Georgia, serif;
   }
   
   .shadow-elegant {

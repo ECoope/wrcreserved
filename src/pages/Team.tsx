@@ -5,8 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
-import andrewMcleod from "@/assets/andrew-mcleod.jpg";
-import leahRay from "@/assets/leah-ray.jpg";
+import TwoToneTitle from "@/components/TwoToneTitle";
+import vickyGillars from "@/assets/vicky-gillars.jpg";
+import charlieHortensio from "@/assets/charlie-hortensio.jpg";
+import meganSpiller from "@/assets/megan-spiller.jpg";
 
 const Team = () => {
   const [formData, setFormData] = useState({
@@ -38,21 +40,25 @@ const Team = () => {
 
   const coChairs = [
     {
-      name: "Andrew McLeod",
-      role: "President",
-      email: "AndrewMcLeod127@gmail.com",
-      phone: "705-427-7891",
-      image: andrewMcleod,
+      name: "Vicky Gillars",
+      role: "Co-Chair",
+      email: null,
+      phone: null,
+      image: vickyGillars,
     },
     {
-      name: "Vicky Galarce",
-      role: "Co-Chair",
-      image: null,
+      name: "Charlie Hortensio",
+      role: "WRC Member",
+      email: null,
+      phone: null,
+      image: charlieHortensio,
     },
     {
-      name: "Leah Ray",
-      role: "Co-Chair",
-      image: leahRay,
+      name: "Megan Spiller",
+      role: "WRC Member",
+      email: null,
+      phone: null,
+      image: meganSpiller,
     },
   ];
 
@@ -61,9 +67,11 @@ const Team = () => {
       {/* Hero */}
       <section className="py-32 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Our Team
-          </h1>
+          <TwoToneTitle 
+            first="OUR" 
+            second="TEAM" 
+            className="text-5xl md:text-7xl mb-6 animate-fade-in"
+          />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
             Meet the exclusive leadership of The Reserve Circle.
           </p>
@@ -73,7 +81,10 @@ const Team = () => {
       {/* Co-Chairs */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Executive Team</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
+            <span className="font-bold">EXECUTIVE</span>
+            <span className="font-normal"> TEAM</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {coChairs.map((chair, index) => (
               <Card 
@@ -125,7 +136,10 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Apply to Join</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
+                <span className="font-bold">APPLY TO</span>
+                <span className="font-normal"> JOIN</span>
+              </h2>
               <p className="text-lg text-muted-foreground">
                 The Reserve Circle is exclusive to executive members. Applications are reviewed once per year.
               </p>
@@ -135,18 +149,19 @@ const Team = () => {
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name">Full Name</Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                       className="mt-2"
+                      placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="email">Western Email *</Label>
+                    <Label htmlFor="email">Western Email</Label>
                     <Input
                       id="email"
                       type="email"
@@ -159,7 +174,7 @@ const Team = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="graduationYear">Expected Graduation Year *</Label>
+                    <Label htmlFor="graduationYear">Expected Graduation Year</Label>
                     <Input
                       id="graduationYear"
                       value={formData.graduationYear}

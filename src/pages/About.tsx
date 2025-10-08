@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Sparkles, Diamond, BookOpen, Shield } from "lucide-react";
+import TwoToneTitle from "@/components/TwoToneTitle";
 import aboutVideo from "@/assets/about-video.mov";
 
 const About = () => {
@@ -66,11 +67,13 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Our Story
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up">
-            An exclusive community founded in 2025, dedicated to networking, professional development, and responsible wine appreciation.
+          <TwoToneTitle 
+            first="OUR" 
+            second="STORY" 
+            className="text-5xl md:text-7xl mb-6 animate-fade-in"
+          />
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto animate-fade-in-up leading-relaxed">
+            Founded in 2023, the Western Reserve Circle is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Our partnership with Queen's reflects a shared vision that values elegance, community, and growth. Every gathering is planned with purpose so that what our members take with them is as meaningful as what is poured.
           </p>
         </div>
       </section>
@@ -79,7 +82,10 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
+              <span className="font-bold">OUR</span>
+              <span className="font-normal"> VALUES</span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The Reserve Circle is built on principles of excellence, exclusivity, and community.
             </p>
@@ -111,8 +117,9 @@ const About = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              Frequently Asked Questions
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">
+              <span className="font-bold">FREQUENTLY</span>
+              <span className="font-normal"> ASKED QUESTIONS</span>
             </h2>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
@@ -138,7 +145,10 @@ const About = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <Shield className="h-12 w-12 mx-auto mb-4 text-secondary" />
-          <h3 className="text-3xl font-bold mb-4">Responsible Enjoyment</h3>
+          <h3 className="text-3xl font-bold mb-4 font-serif">
+            <span className="font-bold">RESPONSIBLE</span>
+            <span className="font-normal"> ENJOYMENT</span>
+          </h3>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
             The Reserve Circle is committed to promoting responsible wine appreciation. All events comply with Ontario regulations. Must be 19+ to attend events serving alcohol. Non-alcoholic options are always available.
           </p>

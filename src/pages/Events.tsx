@@ -1,6 +1,8 @@
 import { Wine, BookOpen, Users, Mail, Instagram } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import TwoToneTitle from "@/components/TwoToneTitle";
+import tastingEvent from "@/assets/tasting-event.jpg";
 
 const Events = () => {
 
@@ -9,9 +11,11 @@ const Events = () => {
       {/* Hero */}
       <section className="py-32 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-secondary">
-            Events
-          </h1>
+          <TwoToneTitle 
+            first="OUR" 
+            second="EVENTS" 
+            className="text-5xl md:text-7xl mb-6 animate-fade-in text-secondary"
+          />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
             Exclusive, invite-only experiences for our members.
           </p>
@@ -48,20 +52,38 @@ const Events = () => {
       {/* Past Events */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Past Events</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
+            <span className="font-bold">PAST</span>
+            <span className="font-normal"> EVENTS</span>
+          </h2>
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Featured Event - Don Adriano */}
+            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative h-64 md:h-auto">
+                  <img
+                    src={tastingEvent}
+                    alt="Wine Tasting Event"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-3">Wine Tasting with Don Adriano Tequila</h3>
+                  <p className="text-secondary font-semibold mb-2">September 25, 2025</p>
+                  <p className="text-muted-foreground font-medium mb-4">The London Club, London, Ontario</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    An evening of refined taste and conversation at the historic London Club. Members enjoyed a guided tasting of Don Adriano Tequila alongside curated hors d'oeuvres. The night reflected the essence of WRC through elegant ambience, meaningful connection, and shared appreciation for craft.
+                  </p>
+                  <p className="text-sm text-secondary italic">Supported by Raymond James Financial Services</p>
+                </CardContent>
+              </div>
+            </Card>
+            
             <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Silent Dinner</h3>
                 <p className="text-secondary font-semibold mb-3">September 17, 2025</p>
                 <p className="text-muted-foreground">An intimate dining experience focused on mindful appreciation and connection.</p>
-              </CardContent>
-            </Card>
-            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Wine Tasting with Don Adriano Tequila</h3>
-                <p className="text-secondary font-semibold mb-3">September 25, 2025</p>
-                <p className="text-muted-foreground">Supported by Raymond James Financial Services. A curated tasting event exploring premium selections.</p>
               </CardContent>
             </Card>
           </div>
@@ -71,7 +93,10 @@ const Events = () => {
       {/* Event Series */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Event Series</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
+            <span className="font-bold">EVENT</span>
+            <span className="font-normal"> SERIES</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
@@ -109,7 +134,10 @@ const Events = () => {
       {/* CTA */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Interested in Joining?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
+            <span className="font-bold">INTERESTED IN</span>
+            <span className="font-normal"> JOINING?</span>
+          </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Apply to become a member and gain access to our exclusive events.
           </p>

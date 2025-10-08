@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles, Diamond, BookOpen, Shield, Mail } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import TwoToneTitle from "@/components/TwoToneTitle";
 import heroVideo from "@/assets/hero-video.mov";
 import members1 from "@/assets/members-1.jpg";
 import members2 from "@/assets/members-2.jpg";
@@ -82,23 +83,22 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary-dark/80 to-primary-dark/90" />
         
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-secondary mb-6">
-            The Reserve Circle
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground mb-3 max-w-3xl mx-auto">
-            An exclusive community for networking, professional development,
-          </p>
+          <TwoToneTitle 
+            first="JOIN THE" 
+            second="CIRCLE" 
+            className="text-5xl md:text-7xl text-secondary mb-6"
+          />
           <p className="text-xl md:text-2xl text-primary-foreground mb-8 max-w-3xl mx-auto">
-            and celebrating wine—responsibly.
+            The ultimate university experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold text-lg font-semibold">
-              <Link to="/events">
-                View Events <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/team">
+                Apply for Membership <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground text-lg backdrop-blur-sm font-semibold">
-              <Link to="/team">Meet Our Team</Link>
+              <Link to="/events">View Upcoming Tastings</Link>
             </Button>
           </div>
         </div>

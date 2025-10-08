@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import TwoToneTitle from "@/components/TwoToneTitle";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -49,11 +50,13 @@ const Contact = () => {
       {/* Hero */}
       <section className="py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Get in Touch
-          </h1>
+          <TwoToneTitle 
+            first="GET IN" 
+            second="TOUCH" 
+            className="text-5xl md:text-7xl mb-6 animate-fade-in"
+          />
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up">
-            Questions, partnerships, or press inquiries? Drop us a line—we'll get back within 2 business days.
+            Questions, partnerships, or press inquiries? Drop us a line. We'll get back within 2 business days.
           </p>
         </div>
       </section>
@@ -74,7 +77,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">Full Name</Label>
                       <Input
                         id="name"
                         placeholder="John Doe"
@@ -84,7 +87,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">Email Address</Label>
                       <Input
                         id="email"
                         type="email"
@@ -97,7 +100,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="topic">Topic *</Label>
+                    <Label htmlFor="topic">Topic</Label>
                     <Select
                       value={formData.topic}
                       onValueChange={(value) => setFormData({ ...formData, topic: value })}
@@ -118,10 +121,10 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us what's on your mind..."
+                      placeholder="Tell us what's on your mind"
                       rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -197,7 +200,7 @@ const Contact = () => {
               <Card className="border-primary/20 bg-gradient-to-br from-wine/10 to-amber/10">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Partnership Inquiries:</strong> Interested in collaborating with The Reserve Circle? We'd love to hear from you! Select "Partnership Opportunity" above.
+                    <strong>Partnership Inquiries</strong> Interested in collaborating with the Western Reserve Circle? We would love to hear from you. Select Partnership Opportunity above.
                   </p>
                 </CardContent>
               </Card>
@@ -209,7 +212,10 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-20 bg-champagne">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Find Us on Campus</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">
+            <span className="font-bold">FIND US ON</span>
+            <span className="font-normal"> CAMPUS</span>
+          </h2>
           <Card className="max-w-5xl mx-auto overflow-hidden shadow-elegant">
             <div className="aspect-video bg-muted flex items-center justify-center">
               <div className="text-center text-muted-foreground p-8">
