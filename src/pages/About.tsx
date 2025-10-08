@@ -32,7 +32,7 @@ const About = () => {
   const faqs = [
     {
       question: "How do I become a member?",
-      answer: "WRC is exclusive to executive members with hirings conducted once per year. Submit your application through our application page and we will be in touch.",
+      answer: "WRC is exclusive to executive members with hirings conducted once per year. Our next round of interviews are in the spring, March. Submit your application through our application page and we will be in touch.",
     },
     {
       question: "Do I need to be 19+ to join?",
@@ -43,8 +43,8 @@ const About = () => {
       answer: "Yes. You are welcome to join tastings for the education and the community. We provide thoughtful alternatives and the experience remains inclusive and enjoyable.",
     },
     {
-      question: "When was The Reserve Circle founded?",
-      answer: "The Queen's Reserve Circle (QRC) was founded in 2023 at Queen's University, creating an exclusive community focused on networking, professional development, and responsible wine appreciation.",
+      question: "How is the executive team selected?",
+      answer: "Our selection process focuses on a balance of personality, extracurriculars, experience, and excellence. We choose a team of 35-40 members each year who embody our values and contribute to our community.",
     },
     {
       question: "Is The Reserve Circle affiliated with Western University?",
