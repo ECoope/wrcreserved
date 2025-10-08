@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Diamond, BookOpen, Shield, Mail } from "lucide-react";
+import { ArrowRight, Sparkles, Diamond, BookOpen, Shield, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -167,18 +167,31 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {[
-                { name: "Andrew McLeod", role: "President", image: andrewMcleod },
-                { name: "Vicky Galarce", role: "Co-Chair", image: vickyGalarce },
-                { name: "Leah Ray", role: "Co-Chair", image: leahRay },
+                { name: "Andrew McLeod", role: "President", image: andrewMcleod, linkedinUrl: "https://www.linkedin.com/in/andrewmcleod7/" },
+                { name: "Vicky Galarce", role: "Co-Chair", image: vickyGalarce, linkedinUrl: "https://www.linkedin.com/in/victoria-galarce/" },
+                { name: "Leah Ray", role: "Co-Chair", image: leahRay, linkedinUrl: "https://www.linkedin.com/in/leah-ray13/" },
               ].map((member, index) => (
-                <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow" style={{ animationDelay: `${index * 100}ms` }}>
+                <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow group" style={{ animationDelay: `${index * 100}ms` }}>
                   <CardContent className="pt-8 pb-8">
                     {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-24 h-24 mx-auto mb-4 rounded-full object-cover object-center border-4 border-secondary"
-                      />
+                      <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-center border-4 border-secondary rounded-full"
+                        />
+                        {member.linkedinUrl && (
+                          <a
+                            href={member.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute inset-0 flex items-center justify-center bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                            aria-label={`Visit ${member.name}'s LinkedIn profile`}
+                          >
+                            <Linkedin className="w-10 h-10 text-secondary hover:scale-110 transition-transform" />
+                          </a>
+                        )}
+                      </div>
                     ) : (
                       <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center">
                         <span className="text-3xl font-bold text-secondary">
