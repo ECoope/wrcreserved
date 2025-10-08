@@ -28,17 +28,17 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary border-b-2 border-secondary ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-elegant"
-          : "bg-transparent"
+          ? "shadow-elegant"
+          : ""
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <img src={wrcLogo} alt="WRC Logo" className="h-12 w-12 transition-transform group-hover:scale-110" />
-            <span className="font-serif text-xl font-bold text-secondary">
+            <span className="font-serif text-xl font-bold text-primary-foreground">
               The Reserve Circle
             </span>
           </Link>
@@ -52,17 +52,13 @@ const Navigation = () => {
                   key={link.to}
                   to={link.to}
                   className={`font-medium transition-colors relative group ${
-                    isHome
-                      ? location.pathname === link.to
-                        ? "text-secondary font-semibold"
-                        : "text-foreground hover:text-secondary"
-                      : location.pathname === link.to
-                        ? "text-secondary font-semibold"
-                        : "text-secondary hover:text-secondary/80"
+                    location.pathname === link.to
+                      ? "text-primary-foreground font-semibold"
+                      : "text-primary-foreground hover:text-primary-foreground/80"
                   }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-foreground transition-all group-hover:w-full" />
                 </Link>
               );
             })}
@@ -73,7 +69,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-primary-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -92,13 +88,9 @@ const Navigation = () => {
                     key={link.to}
                     to={link.to}
                     className={`font-medium py-2 ${
-                      isHome
-                        ? location.pathname === link.to
-                          ? "text-secondary font-semibold"
-                          : "text-foreground"
-                        : location.pathname === link.to
-                          ? "text-secondary font-semibold"
-                          : "text-secondary"
+                      location.pathname === link.to
+                        ? "text-primary-foreground font-semibold"
+                        : "text-primary-foreground"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
