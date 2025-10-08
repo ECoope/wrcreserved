@@ -12,6 +12,7 @@ import meganSpiller from "@/assets/megan-spiller-testimonial.png";
 import mayaMehta from "@/assets/maya-mehta.jpg";
 import jadaWaleski from "@/assets/jada-waleski.jpg";
 import jonathanCorbett from "@/assets/jonathan-corbett.jpg";
+import zacharyOrtencio from "@/assets/zachary-ortencio.jpg";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
 import vickyGalarce from "@/assets/vicky-gillars.jpg";
 import leahRay from "@/assets/leah-ray.jpg";
@@ -238,6 +239,12 @@ const Home = () => {
                 role: "Director, Culture",
                 quote: "What stands out is the focus on craft and community. You leave each event having learned something and met someone you want to see again.",
                 image: jonathanCorbett,
+              },
+              {
+                name: "Zachary Ortencio",
+                role: "Member",
+                quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
+                image: zacharyOrtencio,
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
