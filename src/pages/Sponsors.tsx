@@ -71,8 +71,8 @@ const Sponsors = () => {
       </section>
 
       {/* Sponsors Carousel */}
-      <section className="py-32 pb-48 bg-background overflow-hidden relative z-0">
-        <div className="relative">
+      <section className="py-32 pb-64 bg-background overflow-hidden relative z-0">
+        <div className="relative flex justify-center items-center">
           <div className="sponsor-carousel">
             <div className="sponsor-track">
               {duplicatedSponsors.map((sponsor, index) => (
@@ -86,7 +86,7 @@ const Sponsors = () => {
                       />
                     </div>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-80 border-2 z-50 bg-background" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                  <HoverCardContent className="w-96 border-2 z-50 bg-background" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
                     <div className="space-y-3">
                       <h4 className="font-bold text-lg" style={{ color: 'hsl(var(--wrc-purple))' }}>
                         {sponsor.name}
