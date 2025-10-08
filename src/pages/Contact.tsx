@@ -178,7 +178,7 @@ const Contact = () => {
                   <div className="flex items-start gap-3">
                     <Mail className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-semibold">Andrew McLeod, President</p>
+                      <p className="font-semibold">Andrew McLeod</p>
                       <a
                         href="mailto:andrewmcleod127@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
