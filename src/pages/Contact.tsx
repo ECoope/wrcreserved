@@ -172,7 +172,7 @@ const Contact = () => {
 
               <Card className="border-primary/20 shadow-elegant">
                 <CardHeader>
-                  <CardTitle className="text-xl">WRC Contact</CardTitle>
+                  <CardTitle className="text-xl">Personal & Immediate Inquiries</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -197,39 +197,6 @@ const Contact = () => {
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         (705) 427-7891
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20 shadow-elegant">
-                <CardHeader>
-                  <CardTitle className="text-xl">QRC Contact</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-semibold">Jordan Raftis, President</p>
-                      <a
-                        href="mailto:jordan.raftis@queensu.ca"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        jordan.raftis@queensu.ca
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-semibold">Phone</p>
-                      <a
-                        href="tel:+16475490703"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        (647) 549-0703
                       </a>
                     </div>
                   </div>
