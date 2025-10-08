@@ -158,7 +158,7 @@ const Home = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-                Meet Our <span className="text-secondary">Executive Team</span>
+                Meet Our <span className="text-primary">Executive Team</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 The Reserve Circle is led by three dedicated Co-Chairs committed to excellence in networking and wine education.
