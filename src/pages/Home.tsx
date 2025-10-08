@@ -86,7 +86,8 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover [&::-webkit-media-controls]:hidden [&::-webkit-media-controls-play-button]:hidden"
+          style={{ pointerEvents: 'none' }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>

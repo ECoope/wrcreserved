@@ -73,12 +73,12 @@ const Sponsors = () => {
       {/* Sponsors Carousel */}
       <section className="py-32 pb-64 bg-background overflow-hidden relative z-0">
         <div className="relative flex justify-center items-center">
-          <div className="sponsor-carousel">
+          <div className="sponsor-carousel overflow-x-auto md:overflow-hidden scroll-smooth snap-x snap-mandatory hide-scrollbar">
             <div className="sponsor-track">
               {duplicatedSponsors.map((sponsor, index) => (
                 <HoverCard key={index} openDelay={200}>
                   <HoverCardTrigger asChild>
-                    <div className="sponsor-item">
+                    <div className="sponsor-item snap-center">
                       <img
                         src={sponsor.logoSrc}
                         alt={`${sponsor.name} logo`}
@@ -122,7 +122,6 @@ const Sponsors = () => {
         .sponsor-track {
           display: flex;
           gap: 4rem;
-          animation: scroll 40s linear infinite;
           width: fit-content;
         }
         
@@ -135,6 +134,15 @@ const Sponsors = () => {
           padding: 1.5rem 2rem;
         }
         
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        
         @keyframes scroll {
           0% {
             transform: translateX(0);
@@ -144,8 +152,15 @@ const Sponsors = () => {
           }
         }
         
-        .sponsor-carousel:hover .sponsor-track {
-          animation-play-state: paused;
+        /* Animation on desktop only */
+        @media (min-width: 768px) {
+          .sponsor-track {
+            animation: scroll 40s linear infinite;
+          }
+          
+          .sponsor-carousel:hover .sponsor-track {
+            animation-play-state: paused;
+          }
         }
 
         @media (prefers-reduced-motion: reduce) {
