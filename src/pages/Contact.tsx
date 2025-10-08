@@ -57,7 +57,7 @@ const Contact = () => {
           <TwoToneTitle 
             first="GET IN" 
             second="TOUCH" 
-            className="text-5xl md:text-7xl mb-6 animate-fade-in"
+            className="text-5xl md:text-7xl mb-6 animate-fade-in text-secondary"
           />
           <div ref={introRef} className="reveal">
             <p className="text-xl md:text-2xl text-primary-foreground max-w-3xl mx-auto">
