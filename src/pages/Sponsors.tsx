@@ -71,7 +71,7 @@ const Sponsors = () => {
       </section>
 
       {/* Sponsors Carousel */}
-      <section className="py-20 bg-background overflow-hidden">
+      <section className="py-20 bg-background overflow-hidden relative z-0">
         <div className="relative">
           <div className="sponsor-carousel">
             <div className="sponsor-track">
@@ -82,11 +82,11 @@ const Sponsors = () => {
                       <img
                         src={sponsor.logoSrc}
                         alt={`${sponsor.name} logo`}
-                        className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                        className="h-32 w-auto object-contain transition-all duration-300 hover:scale-110"
                       />
                     </div>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-80 border-2" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                  <HoverCardContent className="w-80 border-2 z-50 bg-background" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
                     <div className="space-y-3">
                       <h4 className="font-bold text-lg" style={{ color: 'hsl(var(--wrc-purple))' }}>
                         {sponsor.name}
@@ -131,8 +131,8 @@ const Sponsors = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          min-width: 200px;
-          padding: 1rem 2rem;
+          min-width: 250px;
+          padding: 1.5rem 2rem;
         }
         
         @keyframes scroll {
