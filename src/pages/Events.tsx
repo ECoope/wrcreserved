@@ -134,19 +134,19 @@ const Events = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                title: "Regions 101",
-                description: "Monthly deep dives into the world's most iconic wine regions—from Bordeaux to Barossa.",
+                title: "Events",
+                description: "Sponsored curated events hosted professionally, featuring refined experiences and exclusive partnerships.",
                 icon: Wine,
               },
               {
-                title: "Styles Lab",
-                description: "Hands-on workshops exploring varietals, blending, and blind tasting techniques.",
-                icon: BookOpen,
+                title: "Socials",
+                description: "Experience team bonding through casual gatherings and member connections.",
+                icon: Users,
               },
               {
-                title: "Career Nights",
-                description: "Network with sommeliers, winemakers, and hospitality professionals over curated tastings.",
-                icon: Users,
+                title: "Monthly Meetings",
+                description: "Sub groups that plan and forecast for the future of the club, shaping our vision and direction.",
+                icon: BookOpen,
               },
             ].map((series, index) => (
               <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
