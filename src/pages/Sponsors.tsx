@@ -65,7 +65,7 @@ const Sponsors = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up leading-relaxed">
-            The Western Reserve Circle collaborates with brands that embody sophistication, heritage, and craftsmanship. Each partnership elevates our members' experiences and helps us curate refined, memorable gatherings.
+            The Reserve Circle collaborates with brands that embody sophistication, heritage, and craftsmanship. Each partnership elevates our members' experiences and helps us curate refined, memorable gatherings.
           </p>
         </div>
       </section>
@@ -163,7 +163,7 @@ const Sponsors = () => {
             <span className="font-normal"> WITH WRC</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            If you would like to collaborate with the Western Reserve Circle, reach out and we will connect.
+            If you would like to collaborate with The Reserve Circle, reach out and we will connect.
           </p>
           <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold text-lg h-12 px-8">
             <Link to="/contact">Contact Us</Link>
