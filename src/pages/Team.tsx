@@ -5,8 +5,7 @@ import TwoToneTitle from "@/components/TwoToneTitle";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
 import vickyGalarce from "@/assets/vicky-gillars.jpg";
 import leahRay from "@/assets/leah-ray.jpg";
-import charlieHortensio from "@/assets/charlie-hortensio.jpg";
-import meganSpiller from "@/assets/megan-spiller.jpg";
+import executiveTeamPhoto from "@/assets/executive-team-2025.png";
 
 interface TeamMember {
   name: string;
@@ -19,7 +18,7 @@ interface TeamMember {
 const Team = () => {
   const [showFullTeam, setShowFullTeam] = useState(false);
 
-  const team: TeamMember[] = [
+  const featuredTeam: TeamMember[] = [
     {
       name: "Andrew McLeod",
       title: "President",
@@ -40,25 +39,8 @@ const Team = () => {
       photoSrc: leahRay,
       featured: true,
       order: 3
-    },
-    {
-      name: "Charlie Hortensio",
-      title: "Treasurer",
-      photoSrc: charlieHortensio,
-      featured: false,
-      order: 4
-    },
-    {
-      name: "Megan Spiller",
-      title: "Strategic Advisor",
-      photoSrc: meganSpiller,
-      featured: false,
-      order: 5
     }
-  ].sort((a, b) => a.order - b.order);
-
-  const featuredTeam = team.filter(m => m.featured);
-  const fullTeam = team.filter(m => !m.featured);
+  ];
 
   return (
     <div className="min-h-screen pt-20">
@@ -135,32 +117,19 @@ const Team = () => {
             </button>
           </div>
 
-          {/* Full Team Grid */}
+          {/* Full Team Photo */}
           {showFullTeam && (
             <div 
               id="full-team-grid"
-              className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto animate-fade-in"
+              className="mt-16 max-w-5xl mx-auto animate-fade-in"
             >
-              {fullTeam.map((member, index) => (
-                <div 
-                  key={member.name}
-                  className="flex flex-col items-center text-center animate-scale-in"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-2 shadow-elegant" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
-                    <img
-                      src={member.photoSrc}
-                      alt={`Portrait of ${member.name}, ${member.title}`}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold mb-1 relative">
-                    {member.name}
-                    <span className="block w-6 h-0.5 mx-auto mt-1.5" style={{ backgroundColor: 'hsl(var(--wrc-gold))' }} />
-                  </h3>
-                  <p className="text-sm opacity-90">{member.title}</p>
-                </div>
-              ))}
+              <div className="border-4 rounded-lg overflow-hidden shadow-bold" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                <img
+                  src={executiveTeamPhoto}
+                  alt="Executive Team 2025-2026"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           )}
         </div>
