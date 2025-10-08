@@ -63,7 +63,7 @@ const Events = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">PAST</span>
-            <span className="font-normal text-secondary"> EVENTS</span>
+            <span className="font-normal text-primary"> EVENTS</span>
           </h2>
           <div className="max-w-5xl mx-auto space-y-8">
             {/* Featured Event - Don Adriano */}
