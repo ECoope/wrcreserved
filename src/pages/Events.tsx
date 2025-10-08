@@ -112,9 +112,9 @@ const Events = () => {
                 <CardContent className="p-6 flex flex-col justify-center">
                   <h3 className="text-3xl font-bold mb-3">Rooftop Social</h3>
                   <p className="text-secondary font-semibold mb-2">June 13, 2025</p>
-                  <p className="text-muted-foreground font-medium mb-4">55C Condos, Toronto, Ontario</p>
+                  <p className="text-muted-foreground font-medium mb-4">Yorkville, Toronto, Ontario</p>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    A joint social with QRC held in the heart of Toronto. This privately held event for Reserve Circle members marked a strong first crossover, bringing together members in an exclusive rooftop setting.
+                    A joint social with QRC held at 55C Condos in the heart of Yorkville. This privately held event for Reserve Circle members marked a strong first crossover, bringing together members in an exclusive rooftop setting.
                   </p>
                   <p className="text-sm text-secondary italic">Supported by Majestic Wines</p>
                 </CardContent>
