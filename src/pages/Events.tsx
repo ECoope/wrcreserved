@@ -68,13 +68,13 @@ const Events = () => {
           <div className="max-w-5xl mx-auto space-y-8">
             {/* Featured Event - Don Adriano */}
             <div ref={event1Ref} className="reveal">
-              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <Card className="border-primary/20 hover:border-secondary transition-all overflow-hidden hover-lift hover-glow">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="relative h-64 md:h-auto">
+                <div className="relative h-64 md:h-auto image-zoom-container">
                   <img
                     src={tastingEvent}
                     alt="Wine Tasting Event"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover image-zoom"
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col justify-center">
@@ -91,13 +91,13 @@ const Events = () => {
             </div>
             
             <div ref={event2Ref} className="reveal">
-              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <Card className="border-primary/20 hover:border-secondary transition-all overflow-hidden hover-lift hover-glow">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="relative h-64 md:h-auto">
+                <div className="relative h-64 md:h-auto image-zoom-container">
                   <img
                     src={silentDinner}
                     alt="Silent Dinner Event"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover image-zoom"
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col justify-center">
@@ -112,13 +112,13 @@ const Events = () => {
             </div>
 
             <div ref={event3Ref} className="reveal">
-              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+              <Card className="border-primary/20 hover:border-secondary transition-all overflow-hidden hover-lift hover-glow">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="relative h-64 md:h-auto">
+                <div className="relative h-64 md:h-auto image-zoom-container">
                   <img
                     src={rooftopSocial}
                     alt="Rooftop Social Event"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover image-zoom"
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col justify-center">
@@ -162,7 +162,7 @@ const Events = () => {
                 icon: BookOpen,
               },
             ].map((series, index) => (
-              <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all hover:shadow-bold group animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all group animate-scale-in hover-lift hover-glow" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
                   <div className="mx-auto w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <series.icon className="h-7 w-7 text-secondary" />

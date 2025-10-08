@@ -71,10 +71,10 @@ const Team = () => {
             {featuredTeam.map((member, index) => (
               <div 
                 key={member.name}
-                className="flex flex-col items-center text-center animate-fade-in"
+                className="flex flex-col items-center text-center animate-fade-in group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-48 h-48 mb-6 rounded-full overflow-hidden border-2 shadow-elegant" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                <div className="w-48 h-48 mb-6 rounded-full overflow-hidden border-2 shadow-elegant hover-scale hover-glow transition-all" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
                   <img
                     src={member.photoSrc}
                     alt={`Portrait of ${member.name}, ${member.title}`}
@@ -83,7 +83,7 @@ const Team = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-1 relative">
                   {member.name}
-                  <span className="block w-8 h-0.5 mx-auto mt-2" style={{ backgroundColor: 'hsl(var(--wrc-gold))' }} />
+                  <span className="block w-8 h-0.5 mx-auto mt-2 transition-all group-hover:w-16" style={{ backgroundColor: 'hsl(var(--wrc-gold))' }} />
                 </h3>
                 <p className="text-lg opacity-90">{member.title}</p>
               </div>
@@ -96,7 +96,7 @@ const Team = () => {
               onClick={() => setShowFullTeam(!showFullTeam)}
               aria-expanded={showFullTeam}
               aria-controls="full-team-grid"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border rounded-full transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border rounded-full transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 hover-scale hover-glow"
               style={{ 
                 borderColor: 'hsl(var(--wrc-gold))', 
                 color: 'hsl(var(--wrc-gold))',

@@ -169,7 +169,7 @@ const Home = () => {
                 { name: "Vicky Galarce", role: "Co-Chair", image: vickyGalarce },
                 { name: "Leah Ray", role: "Co-Chair", image: leahRay },
               ].map((member, index) => (
-                <Card key={index} className="text-center border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <Card key={index} className="text-center border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow" style={{ animationDelay: `${index * 100}ms` }}>
                   <CardContent className="pt-8 pb-8">
                     {member.image ? (
                       <img
@@ -247,7 +247,7 @@ const Home = () => {
                 image: mayaMehta,
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
+              <Card key={index} className="border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow" style={{ animationDelay: `${index * 150}ms` }}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-4">
                     <img

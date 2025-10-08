@@ -94,9 +94,9 @@ const About = () => {
                 href="https://thereservecircle.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative"
+                className="group relative hover-scale"
               >
-                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-elegant hover:shadow-bold transition-all group-hover:scale-105">
+                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-elegant hover-glow transition-all">
                   <img 
                     src={qrcLogo} 
                     alt="Queen's Reserve Circle Logo" 
@@ -138,7 +138,7 @@ const About = () => {
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all group animate-fade-in-up"
+                className="border-primary/20 hover:border-secondary transition-all group animate-fade-in-up hover-lift hover-glow"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader>
