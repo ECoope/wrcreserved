@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Linkedin } from "lucide-react";
 import TwoToneTitle from "@/components/TwoToneTitle";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
 import vickyGalarce from "@/assets/vicky-gillars.jpg";
@@ -13,6 +13,7 @@ interface TeamMember {
   photoSrc: string;
   featured: boolean;
   order: number;
+  linkedinUrl?: string;
 }
 
 const Team = () => {
@@ -24,7 +25,8 @@ const Team = () => {
       title: "President",
       photoSrc: andrewMcleod,
       featured: true,
-      order: 1
+      order: 1,
+      linkedinUrl: "https://www.linkedin.com/in/andrewmcleod7/"
     },
     {
       name: "Vicky Galarce",
@@ -74,12 +76,23 @@ const Team = () => {
                 className="flex flex-col items-center text-center animate-fade-in group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-48 h-48 mb-6 rounded-full overflow-hidden border-2 shadow-elegant hover-scale hover-glow transition-all" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-2 shadow-elegant hover-scale hover-glow transition-all" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
                   <img
                     src={member.photoSrc}
                     alt={`Portrait of ${member.name}, ${member.title}`}
                     className="w-full h-full object-cover object-center"
                   />
+                  {member.linkedinUrl && (
+                    <a
+                      href={member.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 flex items-center justify-center bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      aria-label={`Visit ${member.name}'s LinkedIn profile`}
+                    >
+                      <Linkedin className="w-12 h-12 text-secondary hover:scale-110 transition-transform" />
+                    </a>
+                  )}
                 </div>
                 <h3 className="text-2xl font-bold mb-1 relative">
                   {member.name}
