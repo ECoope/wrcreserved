@@ -71,22 +71,26 @@ const Sponsors = () => {
       </section>
 
       {/* Sponsors Carousel */}
-      <section className="py-32 pb-64 bg-background relative">
-        <div className="relative flex justify-center items-center overflow-hidden">
-          <div className="sponsor-carousel overflow-x-auto md:overflow-visible scroll-smooth snap-x snap-mandatory hide-scrollbar">
+      <section className="py-32 pb-64 bg-background relative overflow-x-hidden">
+        <div className="relative flex justify-center items-center">
+          <div className="sponsor-carousel overflow-x-auto md:overflow-x-visible scroll-smooth snap-x snap-mandatory hide-scrollbar">
             <div className="sponsor-track">
               {duplicatedSponsors.map((sponsor, index) => (
                 <HoverCard key={index} openDelay={200}>
                   <HoverCardTrigger asChild>
-                    <div className="sponsor-item snap-center cursor-pointer">
+                    <button className="sponsor-item snap-center bg-transparent border-0 p-0">
                       <img
                         src={sponsor.logoSrc}
                         alt={`${sponsor.name} logo`}
                         className="h-32 w-auto object-contain transition-all duration-300 hover:scale-110"
                       />
-                    </div>
+                    </button>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-96 border-2 z-[100] bg-background" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                  <HoverCardContent 
+                    className="w-96 border-2 bg-background shadow-xl" 
+                    style={{ borderColor: 'hsl(var(--wrc-gold))' }}
+                    sideOffset={10}
+                  >
                     <div className="space-y-3">
                       <h4 className="font-bold text-lg" style={{ color: 'hsl(var(--wrc-purple))' }}>
                         {sponsor.name}
