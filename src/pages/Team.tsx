@@ -33,7 +33,8 @@ const Team = () => {
       title: "Co-Chair",
       photoSrc: vickyGalarce,
       featured: true,
-      order: 2
+      order: 2,
+      linkedinUrl: "https://www.linkedin.com/in/victoria-galarce/"
     },
     {
       name: "Leah Ray",
