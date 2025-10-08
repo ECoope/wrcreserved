@@ -163,7 +163,7 @@ const Home = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-24 h-24 mx-auto mb-4 rounded-full object-cover border-4 border-secondary"
+                        className="w-24 h-24 mx-auto mb-4 rounded-full object-cover object-center border-4 border-secondary"
                       />
                     ) : (
                       <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center">
@@ -217,7 +217,7 @@ const Home = () => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-secondary"
+                      className="w-16 h-16 rounded-full object-cover object-center border-2 border-secondary"
                     />
                     <div>
                       <p className="font-bold text-lg">{testimonial.name}</p>
