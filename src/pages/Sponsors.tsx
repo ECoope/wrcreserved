@@ -2,16 +2,46 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import TwoToneTitle from "@/components/TwoToneTitle";
+import bollingerLogo from "@/assets/sponsors/bollinger.png";
 
 const Sponsors = () => {
   const sponsors = [
     {
-      name: "Partner Name",
-      logoSrc: "/assets/sponsors/placeholder.svg",
-      blurb: "Crafting excellence since 1890.",
-      href: "https://example.com"
+      name: "Raymond James Financial Services",
+      logoSrc: null,
+      blurb: "Life Well Planned",
+      href: "https://www.raymondjames.com/"
     },
-    // Add more sponsors as they become available
+    {
+      name: "Château des Charmes",
+      logoSrc: null,
+      blurb: "Making wine is not what we do, it's who we are",
+      href: "https://www.chateaudescharmes.com/"
+    },
+    {
+      name: "Don Adriano 1950",
+      logoSrc: null,
+      blurb: "Premier collection of tequilas",
+      href: "https://www.donadriano1950.com/"
+    },
+    {
+      name: "Grape Growers of Ontario",
+      logoSrc: null,
+      blurb: "Local grapes make a difference",
+      href: "https://grapegrowersofontario.com/"
+    },
+    {
+      name: "Majestic Wine Cellars Inc.",
+      logoSrc: null,
+      blurb: "Importing the finest wines and spirits",
+      href: "https://majesticwine.ca/"
+    },
+    {
+      name: "Champagne Bollinger",
+      logoSrc: bollingerLogo,
+      blurb: "French champagne excellence since 1829",
+      href: "https://www.champagne-bollinger.com/"
+    },
   ];
 
   return (
@@ -48,24 +78,40 @@ const Sponsors = () => {
                       rel="noopener noreferrer"
                       className="flex flex-col items-center"
                     >
-                      <div className="h-24 flex items-center justify-center mb-4">
-                        <div className="text-4xl font-serif font-bold text-secondary">
-                          {sponsor.name.split(' ').map(n => n[0]).join('')}
-                        </div>
+                      <div className="h-24 flex items-center justify-center mb-4 w-full">
+                        {sponsor.logoSrc ? (
+                          <img 
+                            src={sponsor.logoSrc} 
+                            alt={`${sponsor.name} logo`}
+                            className="max-h-20 max-w-full object-contain"
+                          />
+                        ) : (
+                          <h3 className="text-xl font-serif font-bold text-center px-2" style={{ color: 'hsl(var(--wrc-purple))' }}>
+                            {sponsor.name}
+                          </h3>
+                        )}
                       </div>
                       {sponsor.blurb && (
-                        <p className="text-sm text-muted-foreground">{sponsor.blurb}</p>
+                        <p className="text-sm text-muted-foreground text-center">{sponsor.blurb}</p>
                       )}
                     </a>
                   ) : (
                     <>
-                      <div className="h-24 flex items-center justify-center mb-4">
-                        <div className="text-4xl font-serif font-bold text-secondary">
-                          {sponsor.name.split(' ').map(n => n[0]).join('')}
-                        </div>
+                      <div className="h-24 flex items-center justify-center mb-4 w-full">
+                        {sponsor.logoSrc ? (
+                          <img 
+                            src={sponsor.logoSrc} 
+                            alt={`${sponsor.name} logo`}
+                            className="max-h-20 max-w-full object-contain"
+                          />
+                        ) : (
+                          <h3 className="text-xl font-serif font-bold text-center px-2" style={{ color: 'hsl(var(--wrc-purple))' }}>
+                            {sponsor.name}
+                          </h3>
+                        )}
                       </div>
                       {sponsor.blurb && (
-                        <p className="text-sm text-muted-foreground">{sponsor.blurb}</p>
+                        <p className="text-sm text-muted-foreground text-center">{sponsor.blurb}</p>
                       )}
                     </>
                   )}
