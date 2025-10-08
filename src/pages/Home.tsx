@@ -211,6 +211,30 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
+                name: "Zachary Ortencio",
+                role: "Coordinator, Logistics",
+                quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
+                image: zacharyOrtencio,
+              },
+              {
+                name: "Jada Waleski",
+                role: "Director, Culture",
+                quote: "The Circle blends tradition with a modern student voice. It feels refined without being distant and welcoming without losing its standards.",
+                image: jadaWaleski,
+              },
+              {
+                name: "Jonathan F. Corbett",
+                role: "Director, Culture",
+                quote: "I love exploring the historic curation of wine. Each tasting teaches me the specifics and technicals of exactly what I'm experiencing. One day, I hope to write poems about these wines and the stories they tell.",
+                image: jonathanCorbett,
+              },
+              {
+                name: "Maya Mehta",
+                role: "Coordinator, Marketing",
+                quote: "WRC gives me a place to learn and connect in a way that feels thoughtful and real. Every tasting is curated with care and every conversation opens a new door.",
+                image: mayaMehta,
+              },
+              {
                 name: "Charles Ortencio",
                 role: "Treasurer",
                 quote: "What sets WRC apart is the uniqueness of the experience. Every curated event is thoughtfully designed to blend refinement with genuine connection. It's more than wine, it's about being part of something truly special.",
@@ -221,30 +245,6 @@ const Home = () => {
                 role: "Strategic Advisor",
                 quote: "I love the sophisticated atmosphere WRC creates. It's a space where young professionals can come together, build meaningful relationships, and grow both personally and professionally in an environment that values elegance and intention.",
                 image: meganSpiller,
-              },
-              {
-                name: "Maya Mehta",
-                role: "Coordinator, Marketing",
-                quote: "WRC gives me a place to learn and connect in a way that feels thoughtful and real. Every tasting is curated with care and every conversation opens a new door.",
-                image: mayaMehta,
-              },
-              {
-                name: "Jada Waleski",
-                role: "Director, Culture",
-                quote: "The Circle blends tradition with a modern student voice. It feels refined without being distant and welcoming without losing its standards.",
-                image: jadaWaleski,
-              },
-              {
-                name: "Jonathan Corbett",
-                role: "Director, Culture",
-                quote: "What stands out is the focus on craft and community. You leave each event having learned something and met someone you want to see again.",
-                image: jonathanCorbett,
-              },
-              {
-                name: "Zachary Ortencio",
-                role: "Coordinator, Logistics",
-                quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
-                image: zacharyOrtencio,
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
