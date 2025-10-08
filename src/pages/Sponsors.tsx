@@ -71,7 +71,7 @@ const Sponsors = () => {
       </section>
 
       {/* Sponsors Carousel */}
-      <section className="py-20 bg-background overflow-hidden relative z-0">
+      <section className="py-32 pb-48 bg-background overflow-hidden relative z-0">
         <div className="relative">
           <div className="sponsor-carousel">
             <div className="sponsor-track">
