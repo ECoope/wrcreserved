@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import TwoToneTitle from "@/components/TwoToneTitle";
 import heroVideo from "@/assets/hero-background.mov";
-import members1 from "@/assets/members-1.jpg";
-import members2 from "@/assets/members-2.jpg";
+import charlesOrtencio from "@/assets/charles-ortencio.png";
+import meganSpiller from "@/assets/megan-spiller-testimonial.png";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
 import leahRay from "@/assets/leah-ray.jpg";
 
@@ -199,14 +199,16 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Charlie O.",
-                quote: "The Reserve Circle has been transformative for my professional network. The connections I've made here have opened doors I never expected.",
-                image: members1,
+                name: "Charles Ortencio",
+                role: "Treasurer",
+                quote: "What sets WRC apart is the uniqueness of the experience. Every curated event is thoughtfully designed to blend refinement with genuine connection. It's more than wine, it's about being part of something truly special.",
+                image: charlesOrtencio,
               },
               {
                 name: "Megan Spiller",
-                quote: "The exclusive events and sophisticated atmosphere of WRC set it apart. It's not just about wine—it's about building a community of ambitious professionals.",
-                image: members2,
+                role: "Strategic Advisor",
+                quote: "I love the sophisticated atmosphere WRC creates. It's a space where young professionals can come together, build meaningful relationships, and grow both personally and professionally in an environment that values elegance and intention.",
+                image: meganSpiller,
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
@@ -219,7 +221,7 @@ const Home = () => {
                     />
                     <div>
                       <p className="font-bold text-lg">{testimonial.name}</p>
-                      <p className="text-sm text-secondary">WRC Member</p>
+                      <p className="text-sm text-secondary">{testimonial.role}</p>
                     </div>
                   </div>
                   <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
