@@ -8,9 +8,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import TwoToneTitle from "@/components/TwoToneTitle";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
   const { toast } = useToast();
+  const introRef = useScrollReveal();
+  const formRef = useScrollReveal();
+  const contactInfoRef = useScrollReveal();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,7 +37,7 @@ const Contact = () => {
 
     toast({
       title: "Message Sent!",
-      description: "We'll get back to you within 2 business days.",
+      description: "Thank you for reaching out. We will be in touch soon.",
     });
 
     // Reset form
@@ -55,9 +59,11 @@ const Contact = () => {
             second="TOUCH" 
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up">
-            Questions, partnerships, or press inquiries? Drop us a line. We'll get back within 2 business days.
-          </p>
+          <div ref={introRef} className="reveal">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              Questions, partnerships, or press inquiries? Drop us a line and we will be in touch.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -66,7 +72,8 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <Card className="lg:col-span-2 border-primary/20 shadow-elegant animate-fade-in">
+            <div ref={formRef} className="lg:col-span-2 reveal">
+              <Card className="border-primary/20 shadow-elegant">
               <CardHeader>
                 <CardTitle className="text-3xl">Send Us a Message</CardTitle>
                 <CardDescription className="text-base">
@@ -138,10 +145,11 @@ const Contact = () => {
                   </Button>
                 </form>
               </CardContent>
-            </Card>
+              </Card>
+            </div>
 
             {/* Contact Info */}
-            <div className="space-y-6 animate-fade-in-up">
+            <div ref={contactInfoRef} className="space-y-6 reveal">
               <Card className="border-primary/20 shadow-elegant">
                 <CardHeader>
                   <CardTitle className="text-xl">General Inquiries</CardTitle>
@@ -214,7 +222,7 @@ const Contact = () => {
               <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Partnership & Sponsorship Inquiries:</strong> Interested in collaborating with the Western Reserve Circle? 
+                    <strong>Partnership & Sponsorship Inquiries:</strong> Interested in collaborating with The Reserve Circle? 
                     <a href="/partnerships" className="text-primary hover:underline ml-1">
                       Visit our partnerships page
                     </a>

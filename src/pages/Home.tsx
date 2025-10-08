@@ -5,9 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import TwoToneTitle from "@/components/TwoToneTitle";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import heroVideo from "@/assets/hero-background.mov";
 import charlesOrtencio from "@/assets/charles-ortencio.png";
 import meganSpiller from "@/assets/megan-spiller-testimonial.png";
+import mayaMehta from "@/assets/maya-mehta.jpg";
+import jadaWaleski from "@/assets/jada-waleski.jpg";
+import jonathanCorbett from "@/assets/jonathan-corbett.jpg";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
 import vickyGalarce from "@/assets/vicky-gillars.jpg";
 import leahRay from "@/assets/leah-ray.jpg";
@@ -68,6 +72,10 @@ const ValueCard = ({ icon: Icon, title, shortDescription, description, index }: 
 };
 
 const Home = () => {
+  const heroSubtitleRef = useScrollReveal();
+  const valuesRef = useScrollReveal();
+  const ctaRef = useScrollReveal();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Video */}
@@ -89,12 +97,14 @@ const Home = () => {
             second="CIRCLE" 
             className="text-5xl md:text-7xl text-secondary mb-6"
           />
-          <p className="text-xl md:text-2xl text-primary-foreground mb-8 max-w-3xl mx-auto">
-            The ultimate university experience.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div ref={heroSubtitleRef} className="reveal">
+            <p className="text-xl md:text-2xl text-primary-foreground mb-8 max-w-3xl mx-auto">
+              The ultimate university experience.
+            </p>
+          </div>
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center reveal">
             <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold text-lg font-semibold">
-              <Link to="/team">
+              <Link to="/apply">
                 Apply for Membership <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -106,7 +116,7 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
             <ValueCard
               icon={Sparkles}
               title="Exclusivity"
@@ -197,7 +207,7 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             What Our Members Say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 name: "Charles Ortencio",
@@ -210,6 +220,24 @@ const Home = () => {
                 role: "Strategic Advisor",
                 quote: "I love the sophisticated atmosphere WRC creates. It's a space where young professionals can come together, build meaningful relationships, and grow both personally and professionally in an environment that values elegance and intention.",
                 image: meganSpiller,
+              },
+              {
+                name: "Maya Mehta",
+                role: "Coordinator, Marketing",
+                quote: "WRC gives me a place to learn and connect in a way that feels thoughtful and real. Every tasting is curated with care and every conversation opens a new door.",
+                image: mayaMehta,
+              },
+              {
+                name: "Jada Waleski",
+                role: "Director, Culture",
+                quote: "The Circle blends tradition with a modern student voice. It feels refined without being distant and welcoming without losing its standards.",
+                image: jadaWaleski,
+              },
+              {
+                name: "Jonathan Corbett",
+                role: "Director, Culture",
+                quote: "What stands out is the focus on craft and community. You leave each event having learned something and met someone you want to see again.",
+                image: jonathanCorbett,
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>

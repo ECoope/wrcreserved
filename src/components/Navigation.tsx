@@ -96,8 +96,8 @@ const Navigation = () => {
                 );
               })}
               <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full font-semibold">
-                <Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>
-                  Apply to Join
+                <Link to="/apply" onClick={() => setIsMobileMenuOpen(false)}>
+                  Apply for Membership
                 </Link>
               </Button>
             </div>

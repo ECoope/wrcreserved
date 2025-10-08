@@ -129,7 +129,7 @@ const Partnerships = () => {
               <span className="font-normal"> COLLABORATE</span>
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              For partnership and sponsorship inquiries, please contact Andrew McLeod directly:
+              For partnership and sponsorship inquiries, contact your personal inquiry below.
             </p>
             
             <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8 mb-8">
@@ -154,10 +154,6 @@ const Partnerships = () => {
                 </div>
               </div>
             </div>
-
-            <p className="text-sm opacity-75">
-              Response time: Within 2 business days for all partnership inquiries
-            </p>
           </div>
         </div>
       </section>

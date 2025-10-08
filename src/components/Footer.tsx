@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="border-t border-secondary/30 mt-8 pt-8 text-center text-sm text-primary-foreground/80">
           <p>© {new Date().getFullYear()} The Reserve Circle. All rights reserved.</p>
           <p className="mt-2">Please enjoy responsibly. Must be 19+ to attend events serving alcohol.</p>
-          <p className="mt-3 font-semibold text-secondary">Write: Andrew McLeod</p>
+          <p className="mt-3 font-semibold text-secondary uppercase tracking-wide text-xs">Write: Andrew M. McLeod</p>
         </div>
       </div>
     </footer>

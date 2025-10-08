@@ -2,11 +2,18 @@ import { Wine, BookOpen, Users, Mail, Instagram } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import TwoToneTitle from "@/components/TwoToneTitle";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import tastingEvent from "@/assets/tasting-event.jpg";
 import silentDinner from "@/assets/silent-dinner.jpg";
 import rooftopSocial from "@/assets/rooftop-social.jpg";
 
 const Events = () => {
+  const eventIntroRef = useScrollReveal();
+  const event1Ref = useScrollReveal();
+  const event2Ref = useScrollReveal();
+  const event3Ref = useScrollReveal();
+  const eventSeriesRef = useScrollReveal();
+  const ctaRef = useScrollReveal();
 
   return (
     <div className="min-h-screen pt-20">
@@ -27,8 +34,8 @@ const Events = () => {
       {/* Private Events Notice */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <Alert className="border-primary/20 bg-card animate-fade-in">
+          <div ref={eventIntroRef} className="max-w-3xl mx-auto reveal">
+            <Alert className="border-primary/20 bg-card">
               <Wine className="h-5 w-5 text-primary" />
               <AlertDescription className="text-base mt-2">
                 <p className="font-semibold mb-3 text-foreground">Our events are private and invite-only.</p>
@@ -60,7 +67,8 @@ const Events = () => {
           </h2>
           <div className="max-w-5xl mx-auto space-y-8">
             {/* Featured Event - Don Adriano */}
-            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+            <div ref={event1Ref} className="reveal">
+              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative h-64 md:h-auto">
                   <img
@@ -79,9 +87,11 @@ const Events = () => {
                   <p className="text-sm text-secondary italic">Supported by Raymond James Financial Services</p>
                 </CardContent>
               </div>
-            </Card>
+              </Card>
+            </div>
             
-            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+            <div ref={event2Ref} className="reveal">
+              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative h-64 md:h-auto">
                   <img
@@ -98,9 +108,11 @@ const Events = () => {
                   </p>
                 </CardContent>
               </div>
-            </Card>
+              </Card>
+            </div>
 
-            <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
+            <div ref={event3Ref} className="reveal">
+              <Card className="border-primary/20 hover:border-secondary hover:shadow-bold transition-all overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative h-64 md:h-auto">
                   <img
@@ -119,7 +131,8 @@ const Events = () => {
                   <p className="text-sm text-secondary italic">Supported by Majestic Wines</p>
                 </CardContent>
               </div>
-            </Card>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -131,7 +144,7 @@ const Events = () => {
             <span className="font-bold">EVENT</span>
             <span className="font-normal"> SERIES</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div ref={eventSeriesRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
             {[
               {
                 title: "Events",
@@ -167,7 +180,7 @@ const Events = () => {
 
       {/* CTA */}
       <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+        <div ref={ctaRef} className="container mx-auto px-4 text-center reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
             <span className="font-bold">INTERESTED IN</span>
             <span className="font-normal"> JOINING?</span>
@@ -175,8 +188,8 @@ const Events = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Apply to become a member and gain access to our exclusive events.
           </p>
-          <a href="/team" className="inline-block bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-8 py-3 rounded-lg transition-smooth shadow-bold">
-            Apply to Join
+          <a href="/apply" className="inline-block bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-8 py-3 rounded-lg transition-smooth shadow-bold">
+            Apply for Membership
           </a>
         </div>
       </section>

@@ -35,15 +35,15 @@ const About = () => {
     },
     {
       question: "How do I become a member?",
-      answer: "WRC is exclusive to executive members with hirings conducted once per year. Submit your application through our Team page, and we will respond within 2 business days.",
+      answer: "WRC is exclusive to executive members with hirings conducted once per year. Submit your application through our application page and we will be in touch.",
     },
     {
       question: "Do I need to be 19+ to join?",
       answer: "Yes, you must be of legal drinking age in Ontario (19+) to attend events where alcohol is served. However, we always provide non-alcoholic alternatives at every event.",
     },
     {
-      question: "What if I don't drink alcohol?",
-      answer: "Absolutely no problem! We always offer sophisticated non-alcoholic beverages at tastings, and many of our events focus on networking, professional development, and wine appreciation culture.",
+      question: "Can I attend if I choose not to drink?",
+      answer: "Yes. You are welcome to join tastings for the education and the community. We provide thoughtful alternatives and the experience remains inclusive and enjoyable.",
     },
     {
       question: "When was The Reserve Circle founded?",
