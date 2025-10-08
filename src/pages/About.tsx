@@ -127,7 +127,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
               <span className="font-bold">OUR</span>
-              <span className="font-normal text-secondary"> VALUES</span>
+              <span className="font-normal text-primary"> VALUES</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The Reserve Circle is built on principles of excellence, exclusivity, and community.
