@@ -87,18 +87,42 @@ const Home = () => {
           muted
           playsInline
           preload="auto"
+          webkit-playsinline="true"
+          x-webkit-airplay="allow"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ pointerEvents: 'none' }}
-          onLoadedMetadata={(e) => {
-            const video = e.currentTarget;
-            video.play().catch(() => {});
+          ref={(video) => {
+            if (video) {
+              video.muted = true;
+              video.setAttribute('muted', '');
+              video.setAttribute('playsinline', '');
+              video.setAttribute('webkit-playsinline', '');
+              
+              const playVideo = () => {
+                video.play().catch(() => {
+                  // Fallback: try again on user interaction
+                  document.addEventListener('touchstart', () => {
+                    video.play().catch(() => {});
+                  }, { once: true });
+                });
+              };
+              
+              if (video.readyState >= 2) {
+                playVideo();
+              } else {
+                video.addEventListener('loadeddata', playVideo);
+                video.addEventListener('canplay', playVideo);
+              }
+            }
           }}
         >
+          <source src={heroVideo} type="video/quicktime" />
           <source src={heroVideo} type="video/mp4" />
         </video>
         <style>{`
           video::-webkit-media-controls {
             display: none !important;
+            -webkit-appearance: none !important;
           }
           video::-webkit-media-controls-enclosure {
             display: none !important;
@@ -107,6 +131,9 @@ const Home = () => {
             display: none !important;
           }
           video::-webkit-media-controls-play-button {
+            display: none !important;
+          }
+          video::-webkit-media-controls-start-playback-button {
             display: none !important;
           }
         `}</style>
