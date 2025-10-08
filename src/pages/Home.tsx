@@ -97,9 +97,6 @@ const Home = () => {
                 Apply for Membership <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground text-lg backdrop-blur-sm font-semibold">
-              <Link to="/events">View Upcoming Tastings</Link>
-            </Button>
           </div>
         </div>
       </section>
