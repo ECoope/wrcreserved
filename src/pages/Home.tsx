@@ -203,8 +203,6 @@ const Home = () => {
                         {member.linkedinUrl && (
                           <a
                             href={member.linkedinUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="absolute inset-0 flex items-center justify-center bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
                             aria-label={`Visit ${member.name}'s LinkedIn profile`}
                           >
