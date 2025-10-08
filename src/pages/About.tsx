@@ -4,7 +4,6 @@ import { Sparkles, Diamond, BookOpen, Shield } from "lucide-react";
 import TwoToneTitle from "@/components/TwoToneTitle";
 import aboutVideo from "@/assets/about-video.mov";
 import qrcLogo from "@/assets/qrc-logo.jpg";
-import wrcLogo from "@/assets/wrc-logo.png";
 
 const About = () => {
   const values = [
@@ -45,7 +44,7 @@ const About = () => {
     },
     {
       question: "When was The Reserve Circle founded?",
-      answer: "The Queen's Reserve Circle (QRC) was founded in 2023 at Queen's University. The Western Reserve Circle (WRC) was introduced in 2025 as a partner chapter, both sharing a vision to create exclusive communities focused on networking, professional development, and responsible wine appreciation.",
+      answer: "The Queen's Reserve Circle (QRC) was founded in 2023 at Queen's University, creating an exclusive community focused on networking, professional development, and responsible wine appreciation.",
     },
     {
       question: "Is The Reserve Circle affiliated with Western University?",
@@ -90,42 +89,31 @@ const About = () => {
             </h2>
             
             <div className="flex flex-col items-center gap-12">
-              {/* Logos */}
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-elegant">
+              {/* Logo */}
+              <a 
+                href="https://thereservecircle.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-elegant hover:shadow-bold transition-all group-hover:scale-105">
                   <img 
-                    src={wrcLogo} 
-                    alt="Western Reserve Circle Logo" 
+                    src={qrcLogo} 
+                    alt="Queen's Reserve Circle Logo" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
-                <a 
-                  href="https://thereservecircle.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-elegant hover:shadow-bold transition-all group-hover:scale-105">
-                    <img 
-                      src={qrcLogo} 
-                      alt="Queen's Reserve Circle Logo" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center mt-4 text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                    Visit QRC
-                  </p>
-                </a>
-              </div>
+                <p className="text-center mt-4 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                  Visit QRC
+                </p>
+              </a>
               
-              {/* Description */}
               <div className="space-y-6 max-w-3xl text-center">
                 <p className="text-lg text-muted-foreground">
-                  The Queen's Reserve Circle (QRC) was founded in 2023, establishing the foundation for refined wine appreciation and sophisticated networking among students. Building on this success, the Western Reserve Circle (WRC) was introduced in 2025 as a partner chapter.
+                  The Queen's Reserve Circle (QRC) was founded in 2023, establishing the foundation for refined wine appreciation and sophisticated networking among students.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Together, QRC and WRC share a unified vision: creating exclusive communities where young professionals develop their palates, expand their networks, and grow both personally and professionally. Our partnership strengthens both chapters, offering members access to a broader network and shared expertise.
+                  QRC creates an exclusive community where young professionals develop their palates, expand their networks, and grow both personally and professionally.
                 </p>
               </div>
             </div>
