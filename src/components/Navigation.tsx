@@ -23,6 +23,7 @@ const Navigation = () => {
     { to: "/events", label: "Events" },
     { to: "/team", label: "Team" },
     { to: "/sponsors", label: "Sponsors" },
+    { to: "/partnerships", label: "Partnerships" },
     { to: "/contact", label: "Contact" },
   ];
 

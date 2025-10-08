@@ -32,6 +32,9 @@ const Footer = () => {
               <Link to="/sponsors" className="text-sm hover:text-secondary transition-colors">
                 Sponsors
               </Link>
+              <Link to="/partnerships" className="text-sm hover:text-secondary transition-colors">
+                Partnerships
+              </Link>
               <Link to="/contact" className="text-sm hover:text-secondary transition-colors">
                 Contact
               </Link>

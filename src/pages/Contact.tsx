@@ -204,9 +204,7 @@ const Contact = () => {
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <p className="text-muted-foreground">
-                        Western University<br />
-                        University Community Centre<br />
-                        London, ON N6A 3K7
+                        London, Ontario
                       </p>
                     </div>
                   </div>
@@ -214,24 +212,12 @@ const Contact = () => {
               </Card>
 
               <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardHeader>
-                  <CardTitle className="text-xl">Office Hours</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 text-muted-foreground">
-                    <p><strong>Monday - Friday:</strong> 10am - 4pm</p>
-                    <p><strong>Events:</strong> Evenings & Weekends</p>
-                    <p className="text-sm pt-2 border-t border-primary/20">
-                      * Response time: Within 2 business days
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20 bg-gradient-to-br from-wine/10 to-amber/10">
                 <CardContent className="pt-6">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Partnership Inquiries</strong> Interested in collaborating with the Western Reserve Circle? We would love to hear from you. Select Partnership Opportunity above.
+                    <strong>Partnership & Sponsorship Inquiries:</strong> Interested in collaborating with the Western Reserve Circle? 
+                    <a href="/partnerships" className="text-primary hover:underline ml-1">
+                      Visit our partnerships page
+                    </a>
                   </p>
                 </CardContent>
               </Card>
