@@ -1,66 +1,64 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "@/hooks/use-toast";
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import TwoToneTitle from "@/components/TwoToneTitle";
-import vickyGillars from "@/assets/vicky-gillars.jpg";
+import andrewMcleod from "@/assets/andrew-mcleod.jpg";
+import vickyGalarce from "@/assets/vicky-gillars.jpg";
+import leahRay from "@/assets/leah-ray.jpg";
 import charlieHortensio from "@/assets/charlie-hortensio.jpg";
 import meganSpiller from "@/assets/megan-spiller.jpg";
 
+interface TeamMember {
+  name: string;
+  title: string;
+  photoSrc: string;
+  featured: boolean;
+  order: number;
+}
+
 const Team = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    graduationYear: "",
-    message: "",
-  });
+  const [showFullTeam, setShowFullTeam] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.graduationYear) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    toast({
-      title: "Application Submitted!",
-      description: "We will respond within 2 business days.",
-    });
-
-    setFormData({ name: "", email: "", graduationYear: "", message: "" });
-  };
-
-  const coChairs = [
+  const team: TeamMember[] = [
     {
-      name: "Vicky Gillars",
-      role: "Co-Chair",
-      email: null,
-      phone: null,
-      image: vickyGillars,
+      name: "Andrew McLeod",
+      title: "President",
+      photoSrc: andrewMcleod,
+      featured: true,
+      order: 1
+    },
+    {
+      name: "Vicky Galarce",
+      title: "Co-Chair",
+      photoSrc: vickyGalarce,
+      featured: true,
+      order: 2
+    },
+    {
+      name: "Leah Ray",
+      title: "Co-Chair",
+      photoSrc: leahRay,
+      featured: true,
+      order: 3
     },
     {
       name: "Charlie Hortensio",
-      role: "WRC Member",
-      email: null,
-      phone: null,
-      image: charlieHortensio,
+      title: "Treasurer",
+      photoSrc: charlieHortensio,
+      featured: false,
+      order: 4
     },
     {
       name: "Megan Spiller",
-      role: "WRC Member",
-      email: null,
-      phone: null,
-      image: meganSpiller,
-    },
-  ];
+      title: "Strategic Advisor",
+      photoSrc: meganSpiller,
+      featured: false,
+      order: 5
+    }
+  ].sort((a, b) => a.order - b.order);
+
+  const featuredTeam = team.filter(m => m.featured);
+  const fullTeam = team.filter(m => !m.featured);
 
   return (
     <div className="min-h-screen pt-20">
@@ -73,143 +71,98 @@ const Team = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fade-in-up opacity-90">
-            Meet the exclusive leadership of The Reserve Circle.
+            Meet the leadership of The Reserve Circle.
           </p>
         </div>
       </section>
 
-      {/* Co-Chairs */}
+      {/* Featured Leadership */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">EXECUTIVE</span>
             <span className="font-normal"> TEAM</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {coChairs.map((chair, index) => (
-              <Card 
-                key={index} 
-                className="text-center border-primary/20 hover:border-secondary hover:shadow-bold transition-all group animate-scale-in"
+          
+          {/* Featured Team - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-12">
+            {featuredTeam.map((member, index) => (
+              <div 
+                key={member.name}
+                className="flex flex-col items-center text-center animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardContent className="pt-8 pb-8">
-                  {chair.image ? (
-                    <img
-                      src={chair.image}
-                      alt={chair.name}
-                      className="w-24 h-24 mx-auto mb-6 rounded-full object-cover border-4 border-secondary group-hover:scale-110 transition-transform"
-                    />
-                  ) : (
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 border-4 border-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <span className="text-3xl font-bold text-secondary">
-                        {chair.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold mb-2">{chair.name}</h3>
-                  <p className="text-secondary font-semibold mb-4">{chair.role}</p>
-                  {chair.email && (
-                    <a 
-                      href={`mailto:${chair.email}`} 
-                      className="text-sm text-muted-foreground hover:text-secondary transition-colors block mb-1"
-                    >
-                      {chair.email}
-                    </a>
-                  )}
-                  {chair.phone && (
-                    <a 
-                      href={`tel:${chair.phone.replace(/\D/g, '')}`} 
-                      className="text-sm text-muted-foreground hover:text-secondary transition-colors block"
-                    >
-                      {chair.phone}
-                    </a>
-                  )}
-                </CardContent>
-              </Card>
+                <div className="w-48 h-48 mb-6 rounded-full overflow-hidden border-2 shadow-elegant" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                  <img
+                    src={member.photoSrc}
+                    alt={`Portrait of ${member.name}, ${member.title}`}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-1 relative">
+                  {member.name}
+                  <span className="block w-8 h-0.5 mx-auto mt-2" style={{ backgroundColor: 'hsl(var(--wrc-gold))' }} />
+                </h3>
+                <p className="text-lg opacity-90">{member.title}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Application Form */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-                <span className="font-bold">APPLY TO</span>
-                <span className="font-normal"> JOIN</span>
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                The Reserve Circle is exclusive to executive members. Applications are reviewed once per year.
-              </p>
-            </div>
-
-            <Card className="border-primary/20 shadow-bold">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="mt-2"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">Western Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="mt-2"
-                      placeholder="your.email@uwo.ca"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="graduationYear">Expected Graduation Year</Label>
-                    <Input
-                      id="graduationYear"
-                      value={formData.graduationYear}
-                      onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value })}
-                      required
-                      className="mt-2"
-                      placeholder="2026"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">Why do you want to join The Reserve Circle?</Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="mt-2 min-h-[120px]"
-                      placeholder="Tell us about your interest in wine, networking, and professional development..."
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-bold font-semibold text-lg h-12"
-                  >
-                    Submit Application
-                  </Button>
-
-                  <p className="text-sm text-center text-muted-foreground mt-4">
-                    We will respond within 2 business days.
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
+          {/* Toggle Button */}
+          <div className="flex justify-center">
+            <button
+              onClick={() => setShowFullTeam(!showFullTeam)}
+              aria-expanded={showFullTeam}
+              aria-controls="full-team-grid"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border rounded-full transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              style={{ 
+                borderColor: 'hsl(var(--wrc-gold))', 
+                color: 'hsl(var(--wrc-gold))',
+                outlineColor: 'hsl(var(--wrc-gold))'
+              }}
+            >
+              {showFullTeam ? (
+                <>
+                  Hide Full Team
+                  <ChevronUp className="w-5 h-5" />
+                </>
+              ) : (
+                <>
+                  Show Full Team
+                  <ChevronDown className="w-5 h-5" />
+                </>
+              )}
+            </button>
           </div>
+
+          {/* Full Team Grid */}
+          {showFullTeam && (
+            <div 
+              id="full-team-grid"
+              className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto animate-fade-in"
+            >
+              {fullTeam.map((member, index) => (
+                <div 
+                  key={member.name}
+                  className="flex flex-col items-center text-center animate-scale-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-2 shadow-elegant" style={{ borderColor: 'hsl(var(--wrc-gold))' }}>
+                    <img
+                      src={member.photoSrc}
+                      alt={`Portrait of ${member.name}, ${member.title}`}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold mb-1 relative">
+                    {member.name}
+                    <span className="block w-6 h-0.5 mx-auto mt-1.5" style={{ backgroundColor: 'hsl(var(--wrc-gold))' }} />
+                  </h3>
+                  <p className="text-sm opacity-90">{member.title}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>
