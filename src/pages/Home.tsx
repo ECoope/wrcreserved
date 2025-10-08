@@ -117,7 +117,7 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-b from-background via-muted to-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Our <span className="text-secondary">Values</span>
+            Our <span className="text-primary">Values</span>
           </h2>
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
             <ValueCard
