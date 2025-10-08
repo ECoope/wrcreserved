@@ -9,6 +9,7 @@ import heroVideo from "@/assets/hero-background.mov";
 import charlesOrtencio from "@/assets/charles-ortencio.png";
 import meganSpiller from "@/assets/megan-spiller-testimonial.png";
 import andrewMcleod from "@/assets/andrew-mcleod.jpg";
+import vickyGalarce from "@/assets/vicky-gillars.jpg";
 import leahRay from "@/assets/leah-ray.jpg";
 
 interface ValueCardProps {
@@ -154,7 +155,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {[
                 { name: "Andrew McLeod", role: "President", image: andrewMcleod },
-                { name: "Vicky Galarce", role: "Co-Chair", image: null },
+                { name: "Vicky Galarce", role: "Co-Chair", image: vickyGalarce },
                 { name: "Leah Ray", role: "Co-Chair", image: leahRay },
               ].map((member, index) => (
                 <Card key={index} className="text-center border-primary/20 hover:border-secondary hover:shadow-bold transition-all animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
