@@ -149,7 +149,7 @@ const Events = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
             <span className="font-bold">EVENT</span>
-            <span className="font-normal text-secondary"> SERIES</span>
+            <span className="font-normal text-primary"> SERIES</span>
           </h2>
           <div ref={eventSeriesRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
             {[
