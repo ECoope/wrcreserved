@@ -41,7 +41,8 @@ const Team = () => {
       title: "Co-Chair",
       photoSrc: leahRay,
       featured: true,
-      order: 3
+      order: 3,
+      linkedinUrl: "https://www.linkedin.com/in/leah-ray13/"
     }
   ];
 
