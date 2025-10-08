@@ -3,6 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Sparkles, Diamond, BookOpen, Shield } from "lucide-react";
 import TwoToneTitle from "@/components/TwoToneTitle";
 import aboutVideo from "@/assets/about-video.mov";
+import qrcLogo from "@/assets/qrc-logo.jpg";
 
 const About = () => {
   const values = [
@@ -30,10 +31,6 @@ const About = () => {
 
   const faqs = [
     {
-      question: "Is The Reserve Circle affiliated with Western University?",
-      answer: "No, The Reserve Circle (WRC) is an independent organization. While many of our members are connected to the university community, we are not officially ratified with Western University.",
-    },
-    {
       question: "How do I become a member?",
       answer: "WRC is exclusive to executive members with hirings conducted once per year. Submit your application through our application page and we will be in touch.",
     },
@@ -47,7 +44,11 @@ const About = () => {
     },
     {
       question: "When was The Reserve Circle founded?",
-      answer: "The Reserve Circle was founded in 2025 with a vision to create an exclusive community focused on networking, professional development, and responsible wine appreciation.",
+      answer: "The Queen's Reserve Circle (QRC) was founded in 2023 at Queen's University. The Western Reserve Circle (WRC) was introduced in 2025 as a partner chapter, both sharing a vision to create exclusive communities focused on networking, professional development, and responsible wine appreciation.",
+    },
+    {
+      question: "Is The Reserve Circle affiliated with Western University?",
+      answer: "No, The Reserve Circle (WRC) is an independent organization. While many of our members are connected to the university community, we are not officially affiliated with Western University.",
     },
   ];
 
@@ -73,8 +74,51 @@ const About = () => {
             className="text-5xl md:text-7xl mb-6 animate-fade-in"
           />
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto animate-fade-in-up leading-relaxed">
-            Founded in 2023, the Western Reserve Circle is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Our partnership with Queen's reflects a shared vision that values elegance, community, and growth. Every gathering is planned with purpose so that what our members take with them is as meaningful as what is poured.
+            The Western Reserve Circle is a student-run club dedicated to cultivating sophistication through private wine and beverage tastings. We create settings where members connect naturally, learn with intention, and enjoy craft with care. Every gathering is planned with purpose so that what our members take with them is as meaningful as what is poured.
           </p>
+        </div>
+      </section>
+
+      {/* Partnership Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">
+              <span className="font-bold">OUR</span>
+              <span className="font-normal"> PARTNERSHIP</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground">
+                  The Queen's Reserve Circle (QRC) was founded in 2023, establishing the foundation for refined wine appreciation and sophisticated networking among students. Building on this success, the Western Reserve Circle (WRC) was introduced in 2025 as a partner chapter.
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  Together, QRC and WRC share a unified vision: creating exclusive communities where young professionals develop their palates, expand their networks, and grow both personally and professionally. Our partnership strengthens both chapters, offering members access to a broader network and shared expertise.
+                </p>
+              </div>
+              
+              <div className="flex justify-center">
+                <a 
+                  href="https://thereservecircle.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative"
+                >
+                  <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-elegant hover:shadow-bold transition-all group-hover:scale-105">
+                    <img 
+                      src={qrcLogo} 
+                      alt="Queen's Reserve Circle Logo" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-center mt-4 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                    Visit Queen's Reserve Circle
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

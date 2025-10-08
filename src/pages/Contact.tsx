@@ -172,13 +172,13 @@ const Contact = () => {
 
               <Card className="border-primary/20 shadow-elegant">
                 <CardHeader>
-                  <CardTitle className="text-xl">Personal & Immediate Inquiries</CardTitle>
+                  <CardTitle className="text-xl">WRC Contact</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Mail className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-semibold">Email</p>
+                      <p className="font-semibold">Andrew McLeod, President</p>
                       <a
                         href="mailto:andrewmcleod127@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -197,6 +197,39 @@ const Contact = () => {
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         (705) 427-7891
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 shadow-elegant">
+                <CardHeader>
+                  <CardTitle className="text-xl">QRC Contact</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Mail className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Jordan Raftis, President</p>
+                      <a
+                        href="mailto:jordan.raftis@queensu.ca"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        jordan.raftis@queensu.ca
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Phone className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <a
+                        href="tel:+16475490703"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        (647) 549-0703
                       </a>
                     </div>
                   </div>
@@ -234,25 +267,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-champagne">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif">
-            <span className="font-bold">FIND US ON</span>
-            <span className="font-normal"> CAMPUS</span>
-          </h2>
-          <Card className="max-w-5xl mx-auto overflow-hidden shadow-elegant">
-            <div className="aspect-video bg-muted flex items-center justify-center">
-              <div className="text-center text-muted-foreground p-8">
-                <MapPin className="h-16 w-16 mx-auto mb-4 text-primary" />
-                <p className="text-xl font-semibold mb-2">University Community Centre</p>
-                <p>Western University, London, Ontario</p>
-                <p className="text-sm mt-4">Map integration coming soon</p>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
     </div>
   );
 };
