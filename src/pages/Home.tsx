@@ -242,7 +242,7 @@ const Home = () => {
               },
               {
                 name: "Zachary Ortencio",
-                role: "Member",
+                role: "Coordinator, Logistics",
                 quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
                 image: zacharyOrtencio,
               },
