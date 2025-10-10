@@ -214,7 +214,7 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {[
-                { name: "Andrew McLeod", role: "President", image: andrewMcleod, linkedinUrl: "https://www.linkedin.com/in/andrewmcleod7/" },
+                { name: "Andrew McLeod", role: "Co-Chair", image: andrewMcleod, linkedinUrl: "https://www.linkedin.com/in/andrewmcleod7/" },
                 { name: "Vicky Galarce", role: "Co-Chair", image: vickyGalarce, linkedinUrl: "https://www.linkedin.com/in/victoria-galarce/" },
                 { name: "Leah Ray", role: "Co-Chair", image: leahRay, linkedinUrl: "https://www.linkedin.com/in/leah-ray13/" },
               ].map((member, index) => (

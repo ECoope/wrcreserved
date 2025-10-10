@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import TwoToneTitle from "@/components/TwoToneTitle";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ExternalLink } from "lucide-react";
 import grapeGrowersLogo from "@/assets/sponsors/grape-growers.png";
 import donAdrianoLogo from "@/assets/sponsors/don-adriano.png";
@@ -77,18 +77,18 @@ const Sponsors = () => {
             <div className="sponsor-carousel overflow-x-auto md:overflow-x-visible scroll-smooth snap-x snap-mandatory hide-scrollbar">
               <div className="sponsor-track">
                 {duplicatedSponsors.map((sponsor, index) => (
-                  <HoverCard key={index} openDelay={200}>
-                    <HoverCardTrigger asChild>
+                  <Popover key={index}>
+                    <PopoverTrigger asChild>
                       <button className="sponsor-item snap-center bg-transparent border-0 p-0">
                         <img
                           src={sponsor.logoSrc}
                           alt={`${sponsor.name} logo`}
-                          className="h-32 w-auto object-contain transition-all duration-300 hover:scale-110"
+                          className="h-32 w-auto object-contain transition-all duration-300 active:scale-110"
                         />
                       </button>
-                    </HoverCardTrigger>
-                    <HoverCardContent 
-                      className="w-96 border-2 bg-background shadow-xl max-h-[400px] overflow-y-auto" 
+                    </PopoverTrigger>
+                    <PopoverContent 
+                      className="w-[90vw] md:w-96 border-2 bg-background shadow-xl max-h-[400px] overflow-y-auto" 
                       style={{ borderColor: 'hsl(var(--wrc-gold))' }}
                       sideOffset={15}
                       align="center"
@@ -111,8 +111,8 @@ const Sponsors = () => {
                           <ExternalLink className="h-4 w-4" />
                         </a>
                       </div>
-                    </HoverCardContent>
-                  </HoverCard>
+                    </PopoverContent>
+                  </Popover>
                 ))}
               </div>
             </div>
@@ -166,7 +166,7 @@ const Sponsors = () => {
         
         /* Animation on all devices */
         .sponsor-track {
-          animation: scroll 40s linear infinite;
+          animation: scroll 20s linear infinite;
         }
         
         .sponsor-carousel:hover .sponsor-track,
