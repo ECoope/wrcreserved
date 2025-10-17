@@ -283,10 +283,10 @@ const Home = () => {
                 image: meganSpiller,
               },
               {
-                name: "Zachary Ortencio",
-                role: "Coordinator, Logistics",
-                quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
-                image: zacharyOrtencio,
+                name: "Jonathan F. Corbett",
+                role: "Director, Culture",
+                quote: "I love exploring the historic curation of wine. Each tasting teaches me the specifics and technicals of exactly what I'm experiencing. One day, I hope to write poems about these wines and the stories they tell.",
+                image: jonathanCorbett,
               },
               {
                 name: "Jada Waleski",
@@ -295,16 +295,16 @@ const Home = () => {
                 image: jadaWaleski,
               },
               {
-                name: "Jonathan F. Corbett",
-                role: "Director, Culture",
-                quote: "I love exploring the historic curation of wine. Each tasting teaches me the specifics and technicals of exactly what I'm experiencing. One day, I hope to write poems about these wines and the stories they tell.",
-                image: jonathanCorbett,
-              },
-              {
                 name: "Maya Mehta",
                 role: "Coordinator, Marketing",
                 quote: "WRC gives me a place to learn and connect in a way that feels thoughtful and real. Every tasting is curated with care and every conversation opens a new door.",
                 image: mayaMehta,
+              },
+              {
+                name: "Zachary Ortencio",
+                role: "Coordinator, Logistics",
+                quote: "Being part of WRC has opened doors I never expected. The blend of education and community makes every gathering feel special and worthwhile.",
+                image: zacharyOrtencio,
               },
             ].map((testimonial, index) => (
               <Card key={index} className="border-primary/20 hover:border-secondary transition-all animate-fade-in-up hover-lift hover-glow" style={{ animationDelay: `${index * 150}ms` }}>
