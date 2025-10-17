@@ -168,10 +168,10 @@ const Home = () => {
           </h2>
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
             <ValueCard
-              icon={Sparkles}
-              title="Exclusivity"
-              shortDescription="Limited membership, exceptional experiences"
-              description="WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning."
+              icon={BookOpen}
+              title="Knowledge"
+              shortDescription="Continuous learning and wine education"
+              description="We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection."
               index={0}
             />
             <ValueCard
@@ -182,17 +182,17 @@ const Home = () => {
               index={1}
             />
             <ValueCard
-              icon={BookOpen}
-              title="Knowledge"
-              shortDescription="Continuous learning and wine education"
-              description="We see wine as a story worth learning. Every bottle teaches us something new about craft, culture, and connection."
-              index={2}
-            />
-            <ValueCard
               icon={Shield}
               title="Integrity"
               shortDescription="Building trust through principled action"
               description="Integrity guides how we act and enjoy. We value honesty, respect, and doing things the right way, always."
+              index={2}
+            />
+            <ValueCard
+              icon={Sparkles}
+              title="Exclusivity"
+              shortDescription="Limited membership, exceptional experiences"
+              description="WRC is built around genuine connection. We keep things small so every event feels personal and every conversation has meaning."
               index={3}
             />
           </div>
