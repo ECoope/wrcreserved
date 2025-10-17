@@ -121,41 +121,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Values */}
-      <section className="py-20 bg-gradient-to-b from-muted to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-              <span className="font-bold">OUR</span>
-              <span className="font-normal text-primary"> VALUES</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The Reserve Circle is built on principles of excellence, exclusivity, and community.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="border-primary/20 hover:border-secondary transition-all group animate-fade-in-up hover-lift hover-glow"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <value.icon className="h-7 w-7 text-secondary" />
-                  </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{value.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQs */}
       <section className="py-20 bg-gradient-to-b from-background via-primary/5 to-muted">
         <div className="container mx-auto px-4">
