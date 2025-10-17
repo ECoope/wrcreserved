@@ -142,7 +142,7 @@ const Home = () => {
         <div className="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
           <TwoToneTitle 
             first="The Reserve" 
-            second="CIRCLE"
+            second="Circle"
             className="text-5xl md:text-7xl text-secondary mb-6"
           />
           <div ref={heroSubtitleRef} className="reveal">
