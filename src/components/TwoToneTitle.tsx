@@ -8,7 +8,7 @@ const TwoToneTitle = ({ first, second, className = "" }: TwoToneTitleProps) => {
   return (
     <h1 className={`font-serif ${className}`}>
       <span className="font-bold">{first}</span>
-      <span className="font-normal"> {second}</span>
+      <span className="font-bold"> {second}</span>
     </h1>
   );
 };
