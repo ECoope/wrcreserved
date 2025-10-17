@@ -22,7 +22,7 @@ const Team = () => {
   const featuredTeam: TeamMember[] = [
     {
       name: "Andrew McLeod",
-      title: "President",
+      title: "Co-Chair",
       photoSrc: andrewMcleod,
       featured: true,
       order: 1,
